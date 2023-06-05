@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0allagx6qafc"]
+[gd_scene load_steps=6 format=3 uid="uid://b0allagx6qafc"]
 
 [ext_resource type="PackedScene" uid="uid://cudausi54eb3o" path="res://Scenes/Player/char.tscn" id="1_rk7or"]
 [ext_resource type="Texture2D" uid="uid://n2s6htkl3umf" path="res://Assets/test.png" id="2_t75cn"]
 [ext_resource type="PackedScene" uid="uid://mtntm26bggg7" path="res://Scenes/Player/Bunny.tscn" id="4_a2brc"]
+[ext_resource type="PackedScene" uid="uid://cs3moiwgg0ok8" path="res://models/Wall_wood/wood_wall_test.glb" id="4_bg6oe"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tut21"]
 
@@ -28,8 +29,14 @@ look_sensitivity = 0.0023
 [node name="Camera3D" type="Camera3D" parent="Char"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0598746, -0.0330591)
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Char"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.413597)
+
 [node name="CharacterBody3D" parent="." instance=ExtResource("4_a2brc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
 
 [node name="CharacterBody3D2" parent="." instance=ExtResource("4_a2brc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="wood_wall_test" parent="." instance=ExtResource("4_bg6oe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62327, -0.466092, 2.75384)
