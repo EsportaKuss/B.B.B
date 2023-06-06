@@ -1,16 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0allagx6qafc"]
+[gd_scene load_steps=10 format=3 uid="uid://b0allagx6qafc"]
 
 [ext_resource type="PackedScene" uid="uid://cudausi54eb3o" path="res://Scenes/Player/char.tscn" id="1_rk7or"]
 [ext_resource type="Texture2D" uid="uid://n2s6htkl3umf" path="res://Assets/test.png" id="2_t75cn"]
+[ext_resource type="Shader" path="res://Shaders/pixelate.gdshader" id="3_nlnxo"]
 [ext_resource type="PackedScene" uid="uid://mtntm26bggg7" path="res://Scenes/Player/Bunny.tscn" id="4_a2brc"]
-[ext_resource type="PackedScene" uid="uid://cs3moiwgg0ok8" path="res://models/Wall_wood/wood_wall_test.glb" id="4_bg6oe"]
+[ext_resource type="PackedScene" uid="uid://c2smsdux7u5ux" path="res://Scenes/3d/wagon.tscn" id="5_aroib"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tut21"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5oinj"]
+render_priority = -1
+shader = ExtResource("3_nlnxo")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y36ib"]
+
+[sub_resource type="Environment" id="Environment_vqxmm"]
+background_energy_multiplier = 0.0
+ambient_light_energy = 0.0
+reflected_light_source = 1
+tonemap_exposure = 0.27
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014626, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.480718, 0)
@@ -23,20 +37,31 @@ render_priority = -128
 texture = ExtResource("2_t75cn")
 
 [node name="Char" parent="." instance=ExtResource("1_rk7or")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.039692)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.215943, -2.96031)
 look_sensitivity = 0.0023
 
 [node name="Camera3D" type="Camera3D" parent="Char"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0598746, -0.0330591)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144945, -0.0330591)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Char"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.413597)
+[node name="pixelation" type="MeshInstance3D" parent="Char/Camera3D"]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0.0490003, 0.224712, -0.558929)
+visible = false
+material_override = SubResource("ShaderMaterial_5oinj")
+mesh = SubResource("PlaneMesh_y36ib")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Char"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.080811, 0)
+light_energy = 7.365
+omni_range = 2.00769
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("4_a2brc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+transform = Transform3D(-0.747868, 0, 0.663848, 0, 1, 0, -0.663848, 0, -0.747868, 3.72898, 0.331105, -3.1663)
 
 [node name="CharacterBody3D2" parent="." instance=ExtResource("4_a2brc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+transform = Transform3D(0.309648, 0, 0.950851, 0, 1, 0, -0.950851, 0, 0.309648, 2.32836, 0.324419, -1.48139)
 
-[node name="wood_wall_test" parent="." instance=ExtResource("4_bg6oe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62327, -0.466092, 2.75384)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vqxmm")
+
+[node name="Wagon" parent="." instance=ExtResource("5_aroib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5296, -0.466092, -4.73705)

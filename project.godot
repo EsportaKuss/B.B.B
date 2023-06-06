@@ -14,10 +14,15 @@ config/name="Silence"
 run/main_scene="res://Scenes/Maps/Map_1.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 
+[autoload]
+
+BgMusic="*res://Scenes/music/BG_music.tscn"
+
 [display]
 
-window/size/viewport_width=512
-window/size/viewport_height=300
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
 
 [importer_defaults]
 

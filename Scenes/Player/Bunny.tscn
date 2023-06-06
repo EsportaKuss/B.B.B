@@ -124,6 +124,7 @@ transform = Transform3D(1.889, 0, 0, 0, 1.889, 0, 0, 0, 1.889, 0.0270076, -0.159
 shape = SubResource("BoxShape3D_txenw")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+alpha_cut = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_ukwed")
 animation = &"Walking"
