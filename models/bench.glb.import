@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cs3moiwgg0ok8"
-path="res://.godot/imported/wood_wall_test.glb-e7b2e272188c40195578e5465c52b021.scn"
+uid="uid://c6oi708k6hb2g"
+path="res://.godot/imported/bench.glb-59c6b9f00d3687a465bc2f2d4c32505d.scn"
 
 [deps]
 
-source_file="res://models/Wall_wood/wood_wall_test.glb"
-dest_files=["res://.godot/imported/wood_wall_test.glb-e7b2e272188c40195578e5465c52b021.scn"]
+source_file="res://models/bench.glb"
+dest_files=["res://.godot/imported/bench.glb-59c6b9f00d3687a465bc2f2d4c32505d.scn"]
 
 [params]
 

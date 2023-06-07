@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8vhu3kv2m8rf"
-path="res://.godot/imported/wood_wall_test_Atlas_Wood_Wallpng.png-d8e7168dddf63bdd61d8bd2ec92285da.ctex"
+uid="uid://cj3yi02d38501"
+path="res://.godot/imported/Wagon_frameDoor.png-db5da58865f28b317f2e1f1ad4ebfda3.ctex"
 metadata={
 "vram_texture": false
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://models/Wall_wood/wood_wall_test_Atlas_Wood_Wallpng.png"
-dest_files=["res://.godot/imported/wood_wall_test_Atlas_Wood_Wallpng.png-d8e7168dddf63bdd61d8bd2ec92285da.ctex"]
+source_file="res://Assets/wagon/Wagon_frameDoor.png"
+dest_files=["res://.godot/imported/Wagon_frameDoor.png-db5da58865f28b317f2e1f1ad4ebfda3.ctex"]
 
 [params]
 

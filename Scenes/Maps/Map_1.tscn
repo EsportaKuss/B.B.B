@@ -15,8 +15,10 @@ shader = ExtResource("3_nlnxo")
 [sub_resource type="PlaneMesh" id="PlaneMesh_y36ib"]
 
 [sub_resource type="Environment" id="Environment_vqxmm"]
+background_mode = 1
 background_energy_multiplier = 0.0
-ambient_light_energy = 0.0
+ambient_light_color = Color(0.156863, 0.0235294, 0.0470588, 1)
+ambient_light_energy = 0.01
 reflected_light_source = 1
 tonemap_exposure = 0.27
 
@@ -37,7 +39,7 @@ render_priority = -128
 texture = ExtResource("2_t75cn")
 
 [node name="Char" parent="." instance=ExtResource("1_rk7or")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.215943, -2.96031)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.16992, 0.215943, -2.96031)
 look_sensitivity = 0.0023
 
 [node name="Camera3D" type="Camera3D" parent="Char"]
@@ -51,8 +53,8 @@ mesh = SubResource("PlaneMesh_y36ib")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Char"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.080811, 0)
-light_energy = 7.365
-omni_range = 2.00769
+light_color = Color(0.964706, 0.976471, 1, 1)
+light_volumetric_fog_energy = 0.0
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("4_a2brc")]
 transform = Transform3D(-0.747868, 0, 0.663848, 0, 1, 0, -0.663848, 0, -0.747868, 3.72898, 0.331105, -3.1663)
@@ -64,4 +66,4 @@ transform = Transform3D(0.309648, 0, 0.950851, 0, 1, 0, -0.950851, 0, 0.309648, 
 environment = SubResource("Environment_vqxmm")
 
 [node name="Wagon" parent="." instance=ExtResource("5_aroib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5296, -0.466092, -4.73705)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5296, -0.466092, -4.73705)
