@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://dialogs/balloon.gd" id="1_4u26j"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="Texture2D" uid="uid://euc0mm8je1iq" path="res://Assets/Bunny/expressions/Bunny_Portrait.png" id="3_3f654"]
 [ext_resource type="Texture2D" uid="uid://cxhl27r1q5csu" path="res://Assets/Player/box.png" id="3_oliim"]
+[ext_resource type="Texture2D" uid="uid://crajib6ox0lf7" path="res://Assets/Bunny/expressions/Bunny_normal.png" id="3_saoxw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d24i"]
 content_margin_left = 40.0
@@ -50,11 +50,11 @@ size_flags_vertical = 8
 
 [node name="Portrait" type="TextureRect" parent="Balloon/Margin/Hbox"]
 visibility_layer = 2
-custom_minimum_size = Vector2(120, 120)
+custom_minimum_size = Vector2(140, 140)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-texture = ExtResource("3_3f654")
+texture = ExtResource("3_saoxw")
 
 [node name="VBox" type="VBoxContainer" parent="Balloon/Margin/Hbox"]
 layout_mode = 2

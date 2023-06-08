@@ -33,10 +33,10 @@ pixel_size = 2.4735
 render_priority = -128
 texture = ExtResource("2_t75cn")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("4_a2brc")]
+[node name="BunnyMan" parent="." instance=ExtResource("4_a2brc")]
 transform = Transform3D(-0.747868, 0, 0.663848, 0, 1, 0, -0.663848, 0, -0.747868, 3.72898, 0.331105, 6.8337)
 
-[node name="CharacterBody3D2" parent="." instance=ExtResource("4_a2brc")]
+[node name="BunnyMan2" parent="." instance=ExtResource("4_a2brc")]
 transform = Transform3D(0.309648, 0, 0.950851, 0, 1, 0, -0.950851, 0, 0.309648, 3.32836, 0.324419, 4.51861)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

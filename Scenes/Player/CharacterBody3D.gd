@@ -1,18 +1,22 @@
 extends CharacterBody3D
 @export var speed = 1
 @export var jump_velocity = 2.5
+@export var myEmotions = {}
 @export_range(0,0.005,0.0001) var look_sensitivity = 0.002
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var velocity_y = 0
 @onready var camera:Camera3D = $Camera3D
 @onready var actionable_finder: Area3D = $Direction/ActionFinder
 @onready var state = $"/root/State"
+var state_scrip = preload("res://States/states.gd")
 
 
 func _unhandled_input(event):
 	if Input.is_action_just_pressed("chat"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
+			State.chatting_room["emisor"] = self
+			State.chatting_room["receptor"] = actionables[0].get_parent()
 			actionables[0].action()
 			state.chatting = true
 			return
