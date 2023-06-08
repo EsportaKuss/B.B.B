@@ -1,0 +1,67 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {
+"sad": {
+"name": "sad",
+"pitch_base": 1.0,
+"pitch_variance": 0.0,
+"sound_folder": "",
+"volume_base": 0.0,
+"volume_variance": 0.0
+}
+},
+"style": ""
+},
+"default_portrait": "Normal",
+"description": "",
+"display_name": "Girl",
+"mirror": false,
+"nicknames": ["Girl"],
+"offset": Vector2(0, 0),
+"portraits": {
+"Normal": {
+"ignore_char_scale": false,
+"image": "res://Assets/Player/expressions/char_Portrait.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "sad"
+},
+"rock": {
+"image": "res://Assets/Player/expressions/char_rock.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"sad": {
+"image": "res://Assets/Player/expressions/char_sad.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"scared": {
+"image": "res://Assets/Player/expressions/char_scared_2.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "",
+"sound_mood": "",
+"sound_mood_default": "sad"
+},
+"surpried": {
+"image": "res://Assets/Player/expressions/char_scared.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

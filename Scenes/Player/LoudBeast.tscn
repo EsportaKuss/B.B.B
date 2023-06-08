@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://bp0dqap70fddp"]
+
+[ext_resource type="Texture2D" uid="uid://b13bud3rxllym" path="res://Assets/Noise/noise_beast.png" id="1_ccvad"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wdq5d"]
+size = Vector3(1.11252, 1.71046, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jl1r"]
+atlas = ExtResource("1_ccvad")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylqjc"]
+atlas = ExtResource("1_ccvad")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2g1e"]
+atlas = ExtResource("1_ccvad")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkdrp"]
+atlas = ExtResource("1_ccvad")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uovy"]
+atlas = ExtResource("1_ccvad")
+region = Rect2(800, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aac6e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jl1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylqjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2g1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkdrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uovy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00444615, 0, 0)
+shape = SubResource("BoxShape3D_wdq5d")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_aac6e")
+animation = &"idle"
+autoplay = "idle"

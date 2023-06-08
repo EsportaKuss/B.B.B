@@ -1,0 +1,26 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"color": Color(0.721569, 0.309804, 0.309804, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "normal",
+"description": "",
+"display_name": "BunnyMan",
+"mirror": false,
+"nicknames": ["Bunny"],
+"offset": Vector2(0, 0),
+"portraits": {
+"normal": {
+"image": "res://Assets/Bunny/expressions/Bunny_Portrait.png",
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

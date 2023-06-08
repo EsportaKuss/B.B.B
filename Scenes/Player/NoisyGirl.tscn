@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhee1vddg4rdx"]
+
+[ext_resource type="Texture2D" uid="uid://4alqmhansigy" path="res://Assets/Noise/white-noise.png" id="1_npr8x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xci2j"]
+size = Vector3(1.30135, 1.82657, 0.267116)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvdyu"]
+atlas = ExtResource("1_npr8x")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kh4g"]
+atlas = ExtResource("1_npr8x")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2at46"]
+atlas = ExtResource("1_npr8x")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nagmb"]
+atlas = ExtResource("1_npr8x")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6gtn"]
+atlas = ExtResource("1_npr8x")
+region = Rect2(800, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jfgfq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvdyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kh4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2at46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nagmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6gtn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_xci2j")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_jfgfq")
+animation = &"idle"
+autoplay = "idle"

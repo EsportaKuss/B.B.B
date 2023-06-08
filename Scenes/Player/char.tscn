@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cudausi54eb3o"]
+[gd_scene load_steps=22 format=3 uid="uid://cudausi54eb3o"]
 
 [ext_resource type="Script" path="res://Scenes/Player/CharacterBody3D.gd" id="1_u6j8c"]
 [ext_resource type="Texture2D" uid="uid://db6udos8j1pjy" path="res://Assets/Player/cha_idler.png" id="1_vuq1u"]
@@ -125,6 +125,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5gvro"]
+
 [node name="Char" type="CharacterBody3D"]
 script = ExtResource("1_u6j8c")
 speed = 100
@@ -138,3 +140,18 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_grhpt")
 animation = &"Idle"
 autoplay = "Idle"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144945, -0.0330591)
+
+[node name="Direction" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.201044)
+
+[node name="ActionFinder" type="Area3D" parent="Direction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.084933)
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Direction/ActionFinder"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_5gvro")

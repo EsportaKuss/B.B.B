@@ -1,3 +1,22 @@
 ~ start
-BunnyMan: Hi... Human... Girl? ...weird... Anyway..., you have your ticket?
+if has_meet_BunnyMan == 0
+	BunnyMan: Hi!... Human... Girl?  
+	BunnyMan: weird... 
+	BunnyMan: Anyway... 
+	BunnyMan: Have your ticket?
+	set has_meet_BunnyMan += 1
+	- Yes... => start
+		BunnyMan: Liyer
+	- No... => start
+		BunnyMan: I see
+	- yeap
+	- bochi the god
+	- pobre niña meada
+else:
+	BunnyMan: Have your ticket already? 
+	set has_meet_BunnyMan += 1
+	- no
+	- I know you? => start
+	
+set chatting = false 
 => END

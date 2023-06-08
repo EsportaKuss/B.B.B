@@ -1,10 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://mtntm26bggg7"]
+[gd_scene load_steps=22 format=3 uid="uid://mtntm26bggg7"]
 
 [ext_resource type="Texture2D" uid="uid://cr4sy5h7ib2vv" path="res://Assets/Bunny/Bunny.png" id="1_0ssdc"]
+[ext_resource type="PackedScene" uid="uid://dal3aakit6kdf" path="res://Scenes/tools/actionable.tscn" id="1_ttiwr"]
+[ext_resource type="Resource" uid="uid://vloi78mfhskb" path="res://dialogs/Main.dialogue" id="2_mmy7i"]
 [ext_resource type="Texture2D" uid="uid://cajgo58itg5jc" path="res://Assets/Bunny/Bunny_walking.png" id="2_rs8t6"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_txenw"]
-size = Vector3(0.25, 0.65, 0.0609747)
+[sub_resource type="SphereShape3D" id="SphereShape3D_qb2is"]
+radius = 0.171845
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2knmw"]
 atlas = ExtResource("1_0ssdc")
@@ -117,15 +119,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_txenw"]
+size = Vector3(0.25, 0.65, 0.0609747)
+
 [node name="CharacterBody3D" type="CharacterBody3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.889, 0, 0, 0, 1.889, 0, 0, 0, 1.889, 0.0270076, -0.159841, 0)
-shape = SubResource("BoxShape3D_txenw")
+[node name="Actionable" parent="." instance=ExtResource("1_ttiwr")]
+transform = Transform3D(1.889, 0, 0, 0, 1.889, 0, 0, 0, 1.889, 0.0270076, -0.175862, 0)
+dialogue_resource = ExtResource("2_mmy7i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00909946, 0.0143299, -0.0123847)
+shape = SubResource("SphereShape3D_qb2is")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+billboard = 2
+shaded = true
 alpha_cut = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_ukwed")
 animation = &"Walking"
 autoplay = "Idle"
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.889, 0, 0, 0, 1.889, 0, 0, 0, 1.889, 0.0270076, -0.159841, 0)
+shape = SubResource("BoxShape3D_txenw")
