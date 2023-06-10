@@ -18,12 +18,15 @@ ambient_light_color = Color(0.156863, 0.0235294, 0.0470588, 1)
 ambient_light_energy = 0.01
 reflected_light_source = 1
 tonemap_exposure = 0.27
-ssil_enabled = true
-sdfgi_enabled = true
+sdfgi_read_sky_light = false
 glow_enabled = true
 glow_intensity = 1.32
 glow_strength = 0.86
 glow_blend_mode = 0
+fog_enabled = true
+fog_light_energy = 0.5
+fog_density = 0.005
+volumetric_fog_enabled = true
 
 [node name="Node3D" type="Node3D"]
 
@@ -42,7 +45,7 @@ render_priority = -128
 texture = ExtResource("2_t75cn")
 
 [node name="BunnyMan" parent="." instance=ExtResource("4_a2brc")]
-transform = Transform3D(-0.999851, 0, 0.0172603, 0, 1, 0, -0.0172603, 0, -0.999851, -10.318, 0.331105, 6.68592)
+transform = Transform3D(-0.999851, 0, 0.0172603, 0, 1, 0, -0.0172603, 0, -0.999851, -10.6188, 0.331105, 6.68592)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vqxmm")
@@ -60,10 +63,10 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.601
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.24023, 0, -1.17634)
 
 [node name="Char" parent="." instance=ExtResource("1_rk7or")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.8911, 0, 10.949)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9029, 0.0978937, 8.64223)
 
 [node name="Baboon" parent="." instance=ExtResource("7_jwwon")]
 transform = Transform3D(-0.933, 0, 1.40879e-07, 0, 0.56, 0, -1.40879e-07, 0, -0.933, -10.6856, 0.187946, -6.39279)
 
 [node name="Lanter" parent="." instance=ExtResource("9_1i5ny")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -10.024, -0.459648, 9.06582)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -3.57113, -0.459648, 9.06582)

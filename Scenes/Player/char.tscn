@@ -16,7 +16,7 @@
 [ext_resource type="Script" path="res://Scenes/Player/Interaction.gd" id="14_ujdk3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pud84"]
-size = Vector3(0.25, 0.65, 0.144)
+size = Vector3(0.25, 0.65, 0.2)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmsvd"]
 atlas = ExtResource("1_vuq1u")
@@ -282,6 +282,7 @@ shape = SubResource("BoxShape3D_pud84")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 visible = false
+gi_mode = 0
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_grhpt")
 animation = &"Idle"
@@ -291,9 +292,21 @@ autoplay = "Idle"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144945, 0.0444516)
 cull_mask = 1048573
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D"]
+transform = Transform3D(0.996894, 0, 0.0787549, 0, 1, 0, -0.0787549, 0, 0.996894, -0.00135475, -0.0627132, 0.0287772)
+layers = 3
+light_size = 0.01
+shadow_enabled = true
+shadow_opacity = 0.6
+shadow_blur = 2.0
+distance_fade_enabled = true
+omni_range = 1.5
+omni_attenuation = 0.574348
+
 [node name="Hand" type="AnimatedSprite3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.364177, -0.144945, -0.505152)
 layers = 2
+gi_mode = 0
 alpha_cut = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_dtebu")
@@ -305,6 +318,7 @@ frame_progress = 0.970208
 [node name="Lanter" type="AnimatedSprite3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.364419, -0.328198, -0.530339)
 layers = 2
+gi_mode = 0
 alpha_cut = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_m64rn")
@@ -312,14 +326,6 @@ animation = &"Idle"
 autoplay = "stop"
 frame = 2
 frame_progress = 0.188729
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00209923, 0.0599283, -0.0424943)
-layers = 3
-shadow_enabled = true
-shadow_reverse_cull_face = true
-distance_fade_enabled = true
-omni_attenuation = 0.574348
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Camera3D"]
 anchors_preset = 15

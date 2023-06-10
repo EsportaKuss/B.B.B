@@ -16,9 +16,9 @@ config/features=PackedStringArray("4.0", "Forward Plus")
 
 [autoload]
 
-BgMusic="*res://Scenes/music/BG_music.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 State="*res://States/states.gd"
+BgMusic="*res://Scenes/music/BG_music.tscn"
 
 [dialogic]
 

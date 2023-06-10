@@ -120,7 +120,7 @@ animations = [{
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_txenw"]
-size = Vector3(0.25, 0.65, 0.0609747)
+size = Vector3(0.25, 0.65, 0.1)
 
 [node name="BunnyMan" type="CharacterBody3D"]
 collision_layer = 17
@@ -133,7 +133,6 @@ myEmotions = {
 dialogue_resource = ExtResource("2_mmy7i")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-gi_mode = 0
 billboard = 2
 shaded = true
 alpha_cut = 1
