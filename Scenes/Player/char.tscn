@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cudausi54eb3o"]
+[gd_scene load_steps=48 format=3 uid="uid://cudausi54eb3o"]
 
 [ext_resource type="Script" path="res://Scenes/Player/CharacterBody3D.gd" id="1_u6j8c"]
 [ext_resource type="Texture2D" uid="uid://db6udos8j1pjy" path="res://Assets/Player/cha_idler.png" id="1_vuq1u"]
@@ -8,6 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://c4bmsvb7aub4a" path="res://Assets/Player/expressions/char_sad.png" id="4_dfofl"]
 [ext_resource type="Texture2D" uid="uid://rn2gqad1sblg" path="res://Assets/Player/expressions/char_scared.png" id="5_iicpu"]
 [ext_resource type="Texture2D" uid="uid://bdlp3yad0a21d" path="res://Assets/Player/expressions/char_scared_2.png" id="6_5cmdl"]
+[ext_resource type="Texture2D" uid="uid://dcj2kq6vjc47m" path="res://Assets/Player/Hand_idle_2.png" id="9_07on0"]
+[ext_resource type="Texture2D" uid="uid://c4qe0dv7pyb4r" path="res://Assets/Player/Hand_walk_2.png" id="10_mqoen"]
+[ext_resource type="Texture2D" uid="uid://3bqm8t78aewq" path="res://Assets/Player/LanterHand_Idle.png" id="11_hsrgs"]
+[ext_resource type="Texture2D" uid="uid://2wuakxavl5if" path="res://Assets/Player/LanterHand_walking.png" id="12_7a318"]
+[ext_resource type="Texture2D" uid="uid://cxsgwk5sryllu" path="res://Assets/Player/LanterHand_stop.png" id="13_v8kex"]
+[ext_resource type="Script" path="res://Scenes/Player/Interaction.gd" id="14_ujdk3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pud84"]
 size = Vector3(0.25, 0.65, 0.144)
@@ -130,7 +136,134 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_5gvro"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xk7jy"]
+atlas = ExtResource("9_07on0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpqjl"]
+atlas = ExtResource("10_mqoen")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b88vo"]
+atlas = ExtResource("10_mqoen")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dhac"]
+atlas = ExtResource("10_mqoen")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq8uv"]
+atlas = ExtResource("10_mqoen")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dtebu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xk7jy")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bpqjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b88vo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dhac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq8uv")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kc8s"]
+atlas = ExtResource("11_hsrgs")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk3d4"]
+atlas = ExtResource("11_hsrgs")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_appb7"]
+atlas = ExtResource("11_hsrgs")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npcao"]
+atlas = ExtResource("11_hsrgs")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4ifl"]
+atlas = ExtResource("12_7a318")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnex2"]
+atlas = ExtResource("12_7a318")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kutc"]
+atlas = ExtResource("12_7a318")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yii3b"]
+atlas = ExtResource("12_7a318")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soxc5"]
+atlas = ExtResource("13_v8kex")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m64rn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kc8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kk3d4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_appb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npcao")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4ifl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnex2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kutc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yii3b")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soxc5")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 5.0
+}]
 
 [node name="Char" type="CharacterBody3D"]
 script = ExtResource("1_u6j8c")
@@ -154,16 +287,70 @@ animation = &"Idle"
 autoplay = "Idle"
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144945, -0.0330591)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144945, -0.0110647)
+cull_mask = 1048573
 
-[node name="Direction" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.201044)
+[node name="Hand" type="AnimatedSprite3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.364177, -0.144945, -0.505152)
+layers = 2
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_dtebu")
+animation = &"Walking"
+autoplay = "Idle"
+frame = 1
+frame_progress = 0.970208
 
-[node name="ActionFinder" type="Area3D" parent="Direction"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.084933)
-collision_layer = 0
+[node name="Lanter" type="AnimatedSprite3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.364419, -0.319425, -0.530339)
+layers = 2
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_m64rn")
+animation = &"Idle"
+autoplay = "stop"
+frame = 2
+frame_progress = 0.188729
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0169753, -0.0638166, -0.0327924)
+layers = 3
+light_color = Color(0.964706, 0.976471, 1, 1)
+light_volumetric_fog_energy = 0.0
+omni_range = 2.92761
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Camera3D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="Camera3D/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="CamArm" type="Camera3D" parent="Camera3D/SubViewportContainer/SubViewport"]
+cull_mask = 2
+
+[node name="Interaction" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -3.0598e-08, -1, 0, 0.7, -4.37114e-08, 0, 0, -0.0120842)
 collision_mask = 16
+script = ExtResource("14_ujdk3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Direction/ActionFinder"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-shape = SubResource("BoxShape3D_5gvro")
+[node name="promtp" type="Label" parent="Camera3D/Interaction"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Message
+"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -12,9 +12,16 @@ if has_meet_BunnyMan == 0
 	- Yes... 
 		do change_portrait("receptor","oh")
 		BunnyMan: Liyer
-	- No... => start
+	- No...
+		do change_portrait("receptor","oh")
 		BunnyMan: I see
 		do change_portrait("receptor","Eh")
+elif has_meet_BunnyMan > 3:
+	do change_portrait("receptor","oh")
+	BunnyMan: You better stop...
+	set has_meet_BunnyMan += 1
+elif has_meet_BunnyMan > 5:
+	BunnyMan: You're breaking my patience...
 else:
 	do change_portrait("receptor","Eh")
 	BunnyMan: Have your ticket already? 
@@ -22,6 +29,5 @@ else:
 	do change_portrait("emisor","rock")
 	- no
 	- I know you? => start
-		
 set chatting = false 
 => END
