@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0allagx6qafc"]
+[gd_scene load_steps=12 format=3 uid="uid://b0allagx6qafc"]
 
 [ext_resource type="PackedScene" uid="uid://cudausi54eb3o" path="res://Scenes/Player/char.tscn" id="1_rk7or"]
 [ext_resource type="Texture2D" uid="uid://n2s6htkl3umf" path="res://Assets/test.png" id="2_t75cn"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dhee1vddg4rdx" path="res://Scenes/Player/NoisyGirl.tscn" id="6_4sktd"]
 [ext_resource type="PackedScene" uid="uid://cxokug8sfir8k" path="res://Scenes/Player/Baboon.tscn" id="7_jwwon"]
 [ext_resource type="PackedScene" uid="uid://bp0dqap70fddp" path="res://Scenes/Player/LoudBeast.tscn" id="7_n1k7g"]
-[ext_resource type="PackedScene" uid="uid://bmv67s4nlkqme" path="res://Scenes/3d/lanter.tscn" id="9_1i5ny"]
+[ext_resource type="PackedScene" uid="uid://cunbsr3nmmfsj" path="res://Scenes/Player/test.tscn" id="9_s4sjh"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tut21"]
 
@@ -28,7 +28,11 @@ fog_light_energy = 0.5
 fog_density = 0.005
 volumetric_fog_enabled = true
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="NavigationMesh" id="NavigationMesh_7joiy"]
+vertices = PackedVector3Array(-11.232, 1.47141, -8.15104, -11.232, 1.47141, -0.901039, -9.48198, 1.47141, -0.901039, -9.48198, 1.47141, -8.15104, -11.232, 1.47141, 1.34896, -11.232, 1.47141, 8.59896, -9.48198, 1.47141, 8.59896, -9.48198, 1.47141, 1.34896)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5)]
+
+[node name="MyWorld" type="Node3D"]
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014626, 0)
@@ -50,14 +54,8 @@ transform = Transform3D(-0.999851, 0, 0.0172603, 0, 1, 0, -0.0172603, 0, -0.9998
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vqxmm")
 
-[node name="Wagon" parent="." instance=ExtResource("5_aroib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5296, -0.466092, -4.73705)
-
-[node name="Wagon2" parent="." instance=ExtResource("5_aroib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5296, -0.466092, 4.65901)
-
 [node name="CharacterBody3D3" parent="." instance=ExtResource("6_4sktd")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.60158, 0, 0.839548)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.22486, 0, 4.13227)
 
 [node name="CharacterBody3D4" parent="." instance=ExtResource("7_n1k7g")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.24023, 0, -1.17634)
@@ -68,5 +66,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9029, 0.0978937, 8.64223)
 [node name="Baboon" parent="." instance=ExtResource("7_jwwon")]
 transform = Transform3D(-0.933, 0, 1.40879e-07, 0, 0.56, 0, -1.40879e-07, 0, -0.933, -10.6856, 0.187946, -6.39279)
 
-[node name="Lanter" parent="." instance=ExtResource("9_1i5ny")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -3.57113, -0.459648, 9.06582)
+[node name="Test" parent="." instance=ExtResource("9_s4sjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55162, -0.466092, 15.0409)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_7joiy")
+
+[node name="Wagon" parent="NavigationRegion3D" instance=ExtResource("5_aroib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5296, -0.466092, -4.73705)
+
+[node name="Wagon2" parent="NavigationRegion3D" instance=ExtResource("5_aroib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5296, -0.466092, 4.65901)

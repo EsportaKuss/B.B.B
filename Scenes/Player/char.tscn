@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cudausi54eb3o"]
+[gd_scene load_steps=49 format=3 uid="uid://cudausi54eb3o"]
 
 [ext_resource type="Script" path="res://Scenes/Player/CharacterBody3D.gd" id="1_u6j8c"]
 [ext_resource type="Texture2D" uid="uid://db6udos8j1pjy" path="res://Assets/Player/cha_idler.png" id="1_vuq1u"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c4bmsvb7aub4a" path="res://Assets/Player/expressions/char_sad.png" id="4_dfofl"]
 [ext_resource type="Texture2D" uid="uid://rn2gqad1sblg" path="res://Assets/Player/expressions/char_scared.png" id="5_iicpu"]
 [ext_resource type="Texture2D" uid="uid://bdlp3yad0a21d" path="res://Assets/Player/expressions/char_scared_2.png" id="6_5cmdl"]
+[ext_resource type="PackedScene" uid="uid://bmv67s4nlkqme" path="res://Scenes/3d/lanter.tscn" id="7_xrmgm"]
 [ext_resource type="Texture2D" uid="uid://dcj2kq6vjc47m" path="res://Assets/Player/Hand_idle_2.png" id="9_07on0"]
 [ext_resource type="Texture2D" uid="uid://c4qe0dv7pyb4r" path="res://Assets/Player/Hand_walk_2.png" id="10_mqoen"]
 [ext_resource type="Texture2D" uid="uid://3bqm8t78aewq" path="res://Assets/Player/LanterHand_Idle.png" id="11_hsrgs"]
@@ -275,12 +276,14 @@ myEmotions = {
 "sad": ExtResource("4_dfofl"),
 "scared_2": ExtResource("6_5cmdl")
 }
+lanter_resource = ExtResource("7_xrmgm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0712004, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000682116, 0.316344, 2.09808e-05)
 shape = SubResource("BoxShape3D_pud84")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000682116, 0.387545, 2.09808e-05)
 visible = false
 gi_mode = 0
 texture_filter = 0
@@ -289,10 +292,10 @@ animation = &"Idle"
 autoplay = "Idle"
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144945, 0.0444516)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000682116, 0.53249, 0.0444726)
 cull_mask = 1048573
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D"]
+[node name="myLight" type="OmniLight3D" parent="Camera3D"]
 transform = Transform3D(0.996894, 0, 0.0787549, 0, 1, 0, -0.0787549, 0, 0.996894, -0.00135475, -0.0627132, 0.0287772)
 layers = 3
 light_size = 0.01
@@ -333,6 +336,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="Camera3D/SubViewportContainer"]
 transparent_bg = true
@@ -361,3 +365,6 @@ text = "Message
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="is_looking_lanter" from="Camera3D/Interaction" to="." method="_pick_up_lanter"]

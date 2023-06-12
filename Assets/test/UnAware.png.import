@@ -2,19 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3lr2uas6ax8v"
-path="res://.godot/imported/icon.svg-17eb5d3e2a3cfbe59852220758c5b7bd.ctex"
+uid="uid://3if1v7q1q5ml"
+path="res://.godot/imported/UnAware.png-5b46f9f908d6893fc3b052f40c2f582c.ctex"
 metadata={
-"editor_dark_theme": true,
-"editor_scale": 1.0,
-"has_editor_variant": true,
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/dialogue_manager/assets/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-17eb5d3e2a3cfbe59852220758c5b7bd.ctex"]
+source_file="res://Assets/test/UnAware.png"
+dest_files=["res://.godot/imported/UnAware.png-5b46f9f908d6893fc3b052f40c2f582c.ctex"]
 
 [params]
 
@@ -34,7 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=true
-editor/convert_colors_with_editor_theme=true
+detect_3d/compress_to=0

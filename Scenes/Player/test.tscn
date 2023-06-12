@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cunbsr3nmmfsj"]
+
+[ext_resource type="Script" path="res://Scenes/Player/test.gd" id="1_84q4x"]
+[ext_resource type="Texture2D" uid="uid://3if1v7q1q5ml" path="res://Assets/test/UnAware.png" id="1_lnhly"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_foc4q"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_lnhly")
+texture_filter = 0
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_otnpd"]
+material = SubResource("StandardMaterial3D_foc4q")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3yd7q"]
+size = Vector3(0.804217, 1, 0.873673)
+
+[node name="Test" type="CharacterBody3D"]
+collision_layer = 33
+collision_mask = 33
+script = ExtResource("1_84q4x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 33
+mesh = SubResource("QuadMesh_otnpd")
+
+[node name="AwareArea" type="Area3D" parent="."]
+collision_layer = 33
+collision_mask = 33
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AwareArea"]
+shape = SubResource("BoxShape3D_3yd7q")
