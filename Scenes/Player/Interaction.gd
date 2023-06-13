@@ -14,7 +14,7 @@ func _physics_process(_delta):
 			if Input.is_action_just_pressed("click"):
 				emit_signal("is_looking_lanter",detected)
 		elif detected is BunnyMan:
-			promtp.text = detected.name
+			#promtp.text = detected.name
 			if Input.is_action_just_pressed("chat"):
 				State.chatting_start(get_parent().get_parent(),detected)
 	pass

@@ -268,7 +268,7 @@ animations = [{
 
 [node name="Char" type="CharacterBody3D"]
 script = ExtResource("1_u6j8c")
-speed = 100
+speed = 50
 myEmotions = {
 "normal": ExtResource("2_5fov5"),
 "rock": ExtResource("3_t0r60"),
@@ -276,6 +276,7 @@ myEmotions = {
 "sad": ExtResource("4_dfofl"),
 "scared_2": ExtResource("6_5cmdl")
 }
+look_sensitivity = 0.0034
 lanter_resource = ExtResource("7_xrmgm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -307,7 +308,7 @@ omni_range = 1.5
 omni_attenuation = 0.574348
 
 [node name="Hand" type="AnimatedSprite3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.364177, -0.144945, -0.505152)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.350115, -0.0727305, -0.505152)
 layers = 2
 gi_mode = 0
 alpha_cut = 1
@@ -319,7 +320,7 @@ frame = 1
 frame_progress = 0.970208
 
 [node name="Lanter" type="AnimatedSprite3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.364419, -0.328198, -0.530339)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.350357, -0.255983, -0.530339)
 layers = 2
 gi_mode = 0
 alpha_cut = 1
@@ -331,17 +332,21 @@ frame = 2
 frame_progress = 0.188729
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Camera3D"]
-anchors_preset = 15
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+offset_left = -320.0
+offset_top = -240.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="SubViewport" type="SubViewport" parent="Camera3D/SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(1280, 720)
+size = Vector2i(320, 240)
+size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="CamArm" type="Camera3D" parent="Camera3D/SubViewportContainer/SubViewport"]

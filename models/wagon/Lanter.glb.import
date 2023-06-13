@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ufr7s5crs3dc"
-path="res://.godot/imported/Lanter.glb-6e84b787ab858e0c7eaa360c05d53152.scn"
+path="res://.godot/imported/Lanter.glb-f1d78c3cf53c51dd73ddf33378a56c62.scn"
 
 [deps]
 
-source_file="res://models/Lanter.glb"
-dest_files=["res://.godot/imported/Lanter.glb-6e84b787ab858e0c7eaa360c05d53152.scn"]
+source_file="res://models/wagon/Lanter.glb"
+dest_files=["res://.godot/imported/Lanter.glb-f1d78c3cf53c51dd73ddf33378a56c62.scn"]
 
 [params]
 

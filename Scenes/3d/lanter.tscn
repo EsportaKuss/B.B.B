@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://bmv67s4nlkqme"]
 
-[ext_resource type="Texture2D" uid="uid://b00nyxf6uwhjb" path="res://models/Lanter_0.png" id="2_1qibc"]
+[ext_resource type="Texture2D" uid="uid://b00nyxf6uwhjb" path="res://models/wagon/Lanter_0.png" id="2_b6v3a"]
 [ext_resource type="Script" path="res://Scenes/3d/lanter.gd" id="2_eaie5"]
 [ext_resource type="Script" path="res://Scenes/3d/AwareInteraction.gd" id="2_v62gq"]
 
@@ -12,7 +12,7 @@ alpha_antialiasing_mode = 0
 cull_mode = 2
 shading_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_1qibc")
+albedo_texture = ExtResource("2_b6v3a")
 texture_filter = 0
 texture_repeat = false
 

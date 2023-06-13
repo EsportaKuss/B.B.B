@@ -13,9 +13,13 @@ var looking
 @onready var Light = $Camera3D/myLight
 @onready var ArmCam = $Camera3D/SubViewportContainer/SubViewport/CamArm
 @export var lanter_resource: PackedScene
+@export var full_screem = true
 var state_scrip = preload("res://States/states.gd")
 var moving = false
 
+func _ready():
+	_screen_resize_controller()
+	
 func _physics_process(_delta):
 	if State.chatting  == false:
 		var horizontal_velocity = Input.get_vector("ui_left","ui_right","ui_up","ui_down").normalized() * speed * _delta
@@ -44,6 +48,10 @@ func _input(event):
 	if Input.is_action_just_pressed("click"):
 		if holding:
 			_drop_lanter()
+	if Input.is_action_just_pressed("full_screen"):
+		_screen_resize_controller()
+	if Input.is_key_pressed(KEY_DELETE):
+		get_tree().quit()
 
 func _process(_delta):
 	ArmCam.global_transform = camera.global_transform
@@ -54,7 +62,7 @@ func _process(_delta):
 		Hand.play("Idle")
 		#await get_tree().create_timer(1).timeout
 		lanter.play("stop")
-
+	#print(Engine.get_frames_per_second())
 
 
 
@@ -77,4 +85,10 @@ func _pick_up_lanter(old_lanter):
 	print(old_lanter.name)
 	old_lanter.queue_free()
 	
+func _screen_resize_controller():
+	if full_screem:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	full_screem = not full_screem
 

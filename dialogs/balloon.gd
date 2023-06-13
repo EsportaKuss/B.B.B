@@ -208,4 +208,5 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 
 func _on_margin_resized() -> void:
-	handle_resize()
+	#handle_resize()
+	pass

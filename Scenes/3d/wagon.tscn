@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c2smsdux7u5ux"]
+[gd_scene load_steps=32 format=3 uid="uid://c2smsdux7u5ux"]
 
 [ext_resource type="Texture2D" uid="uid://d1tq0rnc6s28s" path="res://Assets/wagon/wagon_floor.png" id="1_xr57b"]
 [ext_resource type="Texture2D" uid="uid://descktd6mgcw3" path="res://Assets/wagon/Wagon_wall.png" id="2_a6lrq"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cfbhcn2lxnqbm" path="res://Assets/wagon/sprite_roof_n.png" id="9_r452v"]
 [ext_resource type="PackedScene" uid="uid://bg1ye3iljnapi" path="res://Scenes/3d/bench.tscn" id="10_j8lj5"]
 [ext_resource type="PackedScene" uid="uid://dnugd3ocv227k" path="res://Scenes/3d/Conector.tscn" id="10_wpn46"]
+[ext_resource type="PackedScene" uid="uid://dsi6y2hmbehe0" path="res://Scenes/3d/door.tscn" id="11_ho272"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ti550"]
 transparency = 1
@@ -279,7 +280,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.1412
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, 3.55584)
 
 [node name="AoutSideRoof" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.120257, 0.367391, 0, -0.587825, 0.0751606, -0.0309751, 0.960579, 4.49597)
+transform = Transform3D(1, 0, 0, 0, 0.120257, 0.367391, 0, -0.587825, 0.0751606, -0.0336645, 0.947865, 4.48816)
 mesh = SubResource("QuadMesh_5oof7")
 
 [node name="AoutSideRoof2" type="MeshInstance3D" parent="."]
@@ -295,3 +296,11 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.222
 
 [node name="Conector2" parent="." instance=ExtResource("10_wpn46")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.202774, 0, 5.13882)
+
+[node name="Door" parent="." instance=ExtResource("11_ho272")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0216073, 0.322, -3.70081)
+open = false
+
+[node name="Door2" parent="." instance=ExtResource("11_ho272")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100915, 0.310731, 4.26274)
+open = false

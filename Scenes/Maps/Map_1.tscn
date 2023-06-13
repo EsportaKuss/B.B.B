@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0allagx6qafc"]
+[gd_scene load_steps=14 format=3 uid="uid://b0allagx6qafc"]
 
 [ext_resource type="PackedScene" uid="uid://cudausi54eb3o" path="res://Scenes/Player/char.tscn" id="1_rk7or"]
 [ext_resource type="Texture2D" uid="uid://n2s6htkl3umf" path="res://Assets/test.png" id="2_t75cn"]
@@ -7,15 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://dhee1vddg4rdx" path="res://Scenes/Player/NoisyGirl.tscn" id="6_4sktd"]
 [ext_resource type="PackedScene" uid="uid://cxokug8sfir8k" path="res://Scenes/Player/Baboon.tscn" id="7_jwwon"]
 [ext_resource type="PackedScene" uid="uid://bp0dqap70fddp" path="res://Scenes/Player/LoudBeast.tscn" id="7_n1k7g"]
+[ext_resource type="PackedScene" uid="uid://clw1xif0ln570" path="res://models/BG/BG.glb" id="9_ndu6a"]
 [ext_resource type="PackedScene" uid="uid://cunbsr3nmmfsj" path="res://Scenes/Player/test.tscn" id="9_s4sjh"]
+[ext_resource type="PackedScene" uid="uid://c4ra0qb53riyh" path="res://Scenes/3d/forest.tscn" id="10_0n0vt"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tut21"]
 
 [sub_resource type="Environment" id="Environment_vqxmm"]
 background_mode = 1
+background_color = Color(0.180392, 0.00784314, 0.0862745, 1)
 background_energy_multiplier = 0.0
-ambient_light_color = Color(0.156863, 0.0235294, 0.0470588, 1)
-ambient_light_energy = 0.01
+ambient_light_color = Color(0.258824, 0.027451, 0.0431373, 1)
+ambient_light_energy = 0.0
 reflected_light_source = 1
 tonemap_exposure = 0.27
 sdfgi_read_sky_light = false
@@ -24,6 +27,7 @@ glow_intensity = 1.32
 glow_strength = 0.86
 glow_blend_mode = 0
 fog_enabled = true
+fog_light_color = Color(0.392157, 0, 0.223529, 1)
 fog_light_energy = 0.5
 fog_density = 0.005
 volumetric_fog_enabled = true
@@ -61,7 +65,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.224
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.24023, 0, -1.17634)
 
 [node name="Char" parent="." instance=ExtResource("1_rk7or")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9029, 0.0978937, 8.64223)
+transform = Transform3D(-0.0600033, 0, -0.998198, 0, 1, 0, 0.998198, 0, -0.0600033, -10.3396, 0.180923, 4.05076)
 
 [node name="Baboon" parent="." instance=ExtResource("7_jwwon")]
 transform = Transform3D(-0.933, 0, 1.40879e-07, 0, 0.56, 0, -1.40879e-07, 0, -0.933, -10.6856, 0.187946, -6.39279)
@@ -77,3 +81,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5296, -0.466092, -4.73705
 
 [node name="Wagon2" parent="NavigationRegion3D" instance=ExtResource("5_aroib")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5296, -0.466092, 4.65901)
+
+[node name="BG" parent="." instance=ExtResource("9_ndu6a")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -175.194, 7.382, 44.682)
+
+[node name="BG2" parent="." instance=ExtResource("9_ndu6a")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 168.845, 7.382, 45.652)
+
+[node name="Forest" parent="." instance=ExtResource("10_0n0vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.895082, 0, -39.003)
+
+[node name="Forest2" parent="." instance=ExtResource("10_0n0vt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -22.1755, 0, 4.78332)
