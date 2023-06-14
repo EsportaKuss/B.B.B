@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsujk8fah8yqn"]
+
+[ext_resource type="Script" path="res://outSide.gd" id="1_8y6vt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5y4sk"]
+size = Vector3(2.18201, 1, 1.08122)
+
+[node name="Node3D" type="Area3D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_8y6vt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_5y4sk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

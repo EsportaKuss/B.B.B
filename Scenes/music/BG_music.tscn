@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://b8rqtryugba5c"]
 
-[ext_resource type="AudioStream" uid="uid://cu7ydlv101uve" path="res://music/Train.mp3" id="1_pcfef"]
+[ext_resource type="AudioStream" uid="uid://mye7fse4cmvf" path="res://music/TrainBg.mp3" id="1_i686e"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
-stream = ExtResource("1_pcfef")
-volume_db = -19.044
+stream = ExtResource("1_i686e")
+volume_db = -35.0
 autoplay = true

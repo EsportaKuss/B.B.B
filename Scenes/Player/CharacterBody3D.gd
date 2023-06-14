@@ -12,8 +12,11 @@ var looking
 @onready var camera:Camera3D = $Camera3D
 @onready var Light = $Camera3D/myLight
 @onready var ArmCam = $Camera3D/SubViewportContainer/SubViewport/CamArm
+@onready var footsteps = $Footsteps
+@onready var lantermoving = $LanterMoving
 @export var lanter_resource: PackedScene
 @export var full_screem = true
+
 var state_scrip = preload("res://States/states.gd")
 var moving = false
 
@@ -52,15 +55,22 @@ func _input(event):
 		_screen_resize_controller()
 	if Input.is_key_pressed(KEY_DELETE):
 		get_tree().quit()
+	if Input.is_key_pressed(KEY_1):
+		State.sanity -= 10
 
 func _process(_delta):
+	_light_sanity()
 	ArmCam.global_transform = camera.global_transform
 	if moving:
+		if not lantermoving.playing:
+			lantermoving.playing = true
+		else: pass
 		lanter.play("Walking")
 		Hand.play("Walking")
 	else:
+		footsteps.playing = false
 		Hand.play("Idle")
-		#await get_tree().create_timer(1).timeout
+		#await get_tree().create_timer(1).timeou|t
 		lanter.play("stop")
 	#print(Engine.get_frames_per_second())
 
@@ -92,3 +102,6 @@ func _screen_resize_controller():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	full_screem = not full_screem
 
+func _light_sanity():
+	Light.light_color = Color8(State.sanity,255,255)
+	pass

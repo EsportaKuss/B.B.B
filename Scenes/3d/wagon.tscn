@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c2smsdux7u5ux"]
+[gd_scene load_steps=34 format=3 uid="uid://c2smsdux7u5ux"]
 
 [ext_resource type="Texture2D" uid="uid://d1tq0rnc6s28s" path="res://Assets/wagon/wagon_floor.png" id="1_xr57b"]
 [ext_resource type="Texture2D" uid="uid://descktd6mgcw3" path="res://Assets/wagon/Wagon_wall.png" id="2_a6lrq"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bg1ye3iljnapi" path="res://Scenes/3d/bench.tscn" id="10_j8lj5"]
 [ext_resource type="PackedScene" uid="uid://dnugd3ocv227k" path="res://Scenes/3d/Conector.tscn" id="10_wpn46"]
 [ext_resource type="PackedScene" uid="uid://dsi6y2hmbehe0" path="res://Scenes/3d/door.tscn" id="11_ho272"]
+[ext_resource type="PackedScene" uid="uid://drvbqxqolpviw" path="res://Scenes/3d/ceeling.tscn" id="12_5ubj8"]
+[ext_resource type="PackedScene" uid="uid://bsujk8fah8yqn" path="res://Scenes/3d/OutSideArea.tscn" id="13_plhgg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ti550"]
 transparency = 1
@@ -304,3 +306,23 @@ open = false
 [node name="Door2" parent="." instance=ExtResource("11_ho272")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100915, 0.310731, 4.26274)
 open = false
+
+[node name="Ceeling" parent="." instance=ExtResource("12_5ubj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41244, -2.57715)
+
+[node name="Ceeling2" parent="." instance=ExtResource("12_5ubj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41244, 3.35076)
+
+[node name="Ceeling3" parent="." instance=ExtResource("12_5ubj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41244, 1.56235)
+
+[node name="Ceeling4" parent="." instance=ExtResource("12_5ubj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41244, -0.782037)
+
+[node name="Node3D17" parent="." instance=ExtResource("13_plhgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.68952)
+
+[node name="CollisionShape3D" parent="Node3D17" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.527859, 0.0263472)
+
+[editable path="Node3D17"]

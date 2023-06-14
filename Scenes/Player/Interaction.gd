@@ -17,4 +17,9 @@ func _physics_process(_delta):
 			#promtp.text = detected.name
 			if Input.is_action_just_pressed("chat"):
 				State.chatting_start(get_parent().get_parent(),detected)
+		elif detected is Door:
+			#print("my name is a door")
+			if Input.is_action_just_pressed("chat"):
+				detected.open = not detected.open
+				detected._do_door()
 	pass

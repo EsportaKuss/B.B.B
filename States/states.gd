@@ -1,6 +1,8 @@
 extends Node
 var has_meet_BunnyMan = 0
 var chatting = false
+var sanity = 255
+var in_out = "in"
 var chatting_room = {
 }
 var Ui_portrait_ref
