@@ -1,7 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://drvbqxqolpviw"]
+[gd_scene load_steps=7 format=3 uid="uid://drvbqxqolpviw"]
 
 [ext_resource type="Script" path="res://Ceeling.gd" id="1_cm74q"]
 [ext_resource type="PackedScene" uid="uid://ysev5omfkxk8" path="res://models/wagon/ceeling spotlight.glb" id="2_w1l84"]
+
+[sub_resource type="Animation" id="Animation_hnw1b"]
+resource_name = "blink"
+length = 2.00001
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.5, 0.55, 0.7, 0.75, 0.95, 1, 1.3125, 1.4625, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.888889, 0.0, 0.888889, 0.0, 0.888889, 0.0, 0.888889, 0.0, 0.888889, 0.0, 0.888889, 0.0, 0.888889, 0.0, 0.888889, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hddub"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.888889]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k1pas"]
+_data = {
+"RESET": SubResource("Animation_hddub"),
+"blink": SubResource("Animation_hnw1b")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aduhf"]
 shading_mode = 0
@@ -14,6 +52,7 @@ script = ExtResource("1_cm74q")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00580406, 0)
 layers = 3
+light_energy = 0.888889
 light_size = 0.01
 light_cull_mask = 4294967263
 shadow_enabled = true
@@ -22,6 +61,11 @@ shadow_blur = 2.0
 distance_fade_enabled = true
 omni_range = 2.45097
 omni_attenuation = 0.574348
+
+[node name="LightsBlinks" type="AnimationPlayer" parent="OmniLight3D"]
+libraries = {
+"": SubResource("AnimationLibrary_k1pas")
+}
 
 [node name="ceeling spotlight" parent="." instance=ExtResource("2_w1l84")]
 

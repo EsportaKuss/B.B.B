@@ -7,7 +7,7 @@ func _ready():
 
 func change_mode():
 	if mode:
-		light.visible = true
+		light.light_energy = 1
 	else:
-		light.visible = false
+		light.light_energy = 0
 	pass

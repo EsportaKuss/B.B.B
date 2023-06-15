@@ -142,6 +142,8 @@ size = Vector3(1.96475, 0.255937, 1.651)
 
 [node name="Wagon" type="StaticBody3D"]
 script = ExtResource("1_wivyu")
+DoorPath = NodePath("Doors")
+LightsPath = NodePath("Lights")
 
 [node name="3D_floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0754316, -0.00567207, 0.203044)
@@ -301,28 +303,44 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.222
 [node name="Conector2" parent="." instance=ExtResource("10_wpn46")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.202774, 0, 5.13882)
 
-[node name="Door" parent="." instance=ExtResource("11_ho272")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0216073, 0.322, -3.70081)
-
-[node name="Door2" parent="." instance=ExtResource("11_ho272")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100915, 0.310731, 4.26274)
-
-[node name="Ceeling" parent="." instance=ExtResource("12_5ubj8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41244, -2.57715)
-
-[node name="Ceeling2" parent="." instance=ExtResource("12_5ubj8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41244, -0.783049)
-
-[node name="Ceeling3" parent="." instance=ExtResource("12_5ubj8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41244, 1.22757)
-
-[node name="Ceeling4" parent="." instance=ExtResource("12_5ubj8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41244, 3.01699)
-
 [node name="Node3D17" parent="." instance=ExtResource("13_plhgg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.68952)
 
 [node name="CollisionShape3D" parent="Node3D17" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.527859, 0.0263472)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.778839, -4.52034)
+
+[node name="Doors" type="Node3D" parent="."]
+
+[node name="Door" parent="Doors" instance=ExtResource("11_ho272")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0216073, 0.322, -3.70081)
+
+[node name="Door2" parent="Doors" instance=ExtResource("11_ho272")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100915, 0.310731, 4.26274)
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="Ceeling" parent="Lights" instance=ExtResource("12_5ubj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41244, -2.57715)
+mode = false
+
+[node name="Ceeling2" parent="Lights" instance=ExtResource("12_5ubj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41244, -0.783049)
+mode = false
+
+[node name="Ceeling3" parent="Lights" instance=ExtResource("12_5ubj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41244, 1.22757)
+mode = false
+
+[node name="Ceeling4" parent="Lights" instance=ExtResource("12_5ubj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41244, 3.01699)
+mode = false
 
 [editable path="Node3D17"]
+[editable path="Lights/Ceeling"]
+[editable path="Lights/Ceeling/ceeling spotlight"]
+[editable path="Lights/Ceeling2"]
+[editable path="Lights/Ceeling2/ceeling spotlight"]
+[editable path="Lights/Ceeling3"]
+[editable path="Lights/Ceeling3/ceeling spotlight"]
+[editable path="Lights/Ceeling4"]
+[editable path="Lights/Ceeling4/ceeling spotlight"]
