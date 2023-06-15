@@ -1,6 +1,6 @@
 class_name  Door
 extends StaticBody3D
-@export var open = false
+@export var mode = false
 @export var  time_opened = 2
 @export var max_distance_to = 1.5
 @onready var door = $MeshInstance3D
@@ -13,24 +13,24 @@ var timer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_do_door()
+	change_mode()
 	
-func _do_door ():
-	if open:
+func change_mode():
+	if mode:
 		sfx.playing = true
 		was_interacted = true
 		door.play("Open")
 	else:
 		door.play("Closed")
-	Collision.disabled = open
-	#open = not open
+	Collision.disabled = mode
+	#mode = not mode
 	
 func _process(delta):
 	if was_interacted:
 		timer += delta
 		if timer >= time_opened and char_node.global_position.distance_to(global_position) >= max_distance_to:
-			open = not open
-			_do_door()
+			mode = not mode
+			change_mode()
 			was_interacted = false
 			timer = 0
 		else:

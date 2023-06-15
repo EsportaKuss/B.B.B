@@ -163,7 +163,6 @@ size = Vector3(1, 1, 0.168803)
 
 [node name="Door" type="StaticBody3D"]
 script = ExtResource("1_6if6i")
-open = true
 
 [node name="MeshInstance3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.100878, 0.0707667, -0.0812833)

@@ -70,7 +70,7 @@ func _process(_delta):
 	else:
 		footsteps.playing = false
 		Hand.play("Idle")
-		#await get_tree().create_timer(1).timeou|t
+		#await get_tree().create_timer(1).time
 		lanter.play("stop")
 	#print(Engine.get_frames_per_second())
 

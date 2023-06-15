@@ -84,26 +84,27 @@ char_path = NodePath("../../../Char")
 [node name="Door2" parent="NavigationRegion3D/Wagon" index="45"]
 char_path = NodePath("../../../Char")
 
-[node name="Ceeling" parent="NavigationRegion3D/Wagon" index="46"]
-turn = false
-
-[node name="Ceeling2" parent="NavigationRegion3D/Wagon" index="47"]
-turn = false
-
-[node name="Ceeling3" parent="NavigationRegion3D/Wagon" index="48"]
-turn = false
-
-[node name="Ceeling4" parent="NavigationRegion3D/Wagon" index="49"]
-turn = false
-
 [node name="Wagon2" parent="NavigationRegion3D" instance=ExtResource("5_aroib")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5296, -0.466092, 4.65901)
+wagon_number = 1
 
 [node name="Door" parent="NavigationRegion3D/Wagon2" index="44"]
 char_path = NodePath("../../../Char")
 
 [node name="Door2" parent="NavigationRegion3D/Wagon2" index="45"]
 char_path = NodePath("../../../Char")
+
+[node name="Ceeling" parent="NavigationRegion3D/Wagon2" index="46"]
+mode = false
+
+[node name="Ceeling2" parent="NavigationRegion3D/Wagon2" index="47"]
+mode = false
+
+[node name="Ceeling3" parent="NavigationRegion3D/Wagon2" index="48"]
+mode = false
+
+[node name="Ceeling4" parent="NavigationRegion3D/Wagon2" index="49"]
+mode = false
 
 [node name="BG" parent="." instance=ExtResource("9_ndu6a")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -175.194, 7.382, 44.682)

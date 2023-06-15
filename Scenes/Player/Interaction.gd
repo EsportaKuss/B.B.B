@@ -20,6 +20,6 @@ func _physics_process(_delta):
 		elif detected is Door:
 			#print("my name is a door")
 			if Input.is_action_just_pressed("chat"):
-				detected.open = not detected.open
-				detected._do_door()
+				detected.mode = not detected.mode
+				detected.change_mode()
 	pass
