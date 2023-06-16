@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cudausi54eb3o"]
+[gd_scene load_steps=64 format=3 uid="uid://cudausi54eb3o"]
 
 [ext_resource type="Script" path="res://Scenes/Player/CharacterBody3D.gd" id="1_u6j8c"]
 [ext_resource type="Texture2D" uid="uid://db6udos8j1pjy" path="res://Assets/Player/cha_idler.png" id="1_vuq1u"]
@@ -15,11 +15,17 @@
 [ext_resource type="Texture2D" uid="uid://2wuakxavl5if" path="res://Assets/Player/LanterHand_walking.png" id="12_7a318"]
 [ext_resource type="Texture2D" uid="uid://cxsgwk5sryllu" path="res://Assets/Player/LanterHand_stop.png" id="13_v8kex"]
 [ext_resource type="Script" path="res://Scenes/Player/Interaction.gd" id="14_ujdk3"]
+[ext_resource type="Texture2D" uid="uid://brob00gtt1hny" path="res://Assets/Player/Hand_lanter_idle.png" id="15_62qbe"]
 [ext_resource type="AudioStream" uid="uid://bpxm7elpwlgcf" path="res://music/FootSteps.mp3" id="16_uwwvr"]
 [ext_resource type="AudioStream" uid="uid://c87neg4e0kugp" path="res://music/LanterMoving.mp3" id="17_d7tpr"]
+[ext_resource type="Script" path="res://Scenes/Player/State_Manager.gd" id="18_vfvvd"]
+[ext_resource type="Script" path="res://Scrips/PlayerStateMachine/Idle.gd" id="19_e8qia"]
+[ext_resource type="Script" path="res://Scrips/PlayerStateMachine/Walk.gd" id="20_01rp4"]
+[ext_resource type="Script" path="res://Scrips/PlayerStateMachine/Crouch.gd" id="21_a4gme"]
+[ext_resource type="Script" path="res://Scrips/PlayerStateMachine/Jump.gd" id="22_c1jhr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pud84"]
-size = Vector3(0.25, 0.65, 0.2)
+size = Vector3(0.156212, 0.65, 0.2)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmsvd"]
 atlas = ExtResource("1_vuq1u")
@@ -223,6 +229,22 @@ region = Rect2(192, 0, 64, 64)
 atlas = ExtResource("13_v8kex")
 region = Rect2(0, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_snbm0"]
+atlas = ExtResource("15_62qbe")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_noh6m"]
+atlas = ExtResource("15_62qbe")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnya0"]
+atlas = ExtResource("15_62qbe")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg87w"]
+atlas = ExtResource("15_62qbe")
+region = Rect2(192, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_m64rn"]
 animations = [{
 "frames": [{
@@ -262,11 +284,60 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_soxc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snbm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_noh6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnya0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg87w")
 }],
 "loop": true,
 "name": &"stop",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_bjsnm"]
+resource_name = "Crouch"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.000682116, 0.53249, 0.0444726), Vector3(-0.000682116, 0.34986, 0.0444726)]
+}
+
+[sub_resource type="Animation" id="Animation_one6p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.000682116, 0.53249, 0.0444726)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8pgar"]
+_data = {
+"Crouch": SubResource("Animation_bjsnm"),
+"RESET": SubResource("Animation_one6p")
+}
 
 [node name="Char" type="CharacterBody3D"]
 collision_layer = 5
@@ -281,7 +352,16 @@ myEmotions = {
 "scared_2": ExtResource("6_5cmdl")
 }
 look_sensitivity = 0.0034
+Body_HandPath = NodePath("Camera3D/Hand")
+Body_LanterPath = NodePath("Camera3D/Lanter")
+CameraPath = NodePath("Camera3D")
+LightPath = NodePath("Camera3D/myLight")
+ArmCamPath = NodePath("Camera3D/SubViewportContainer/SubViewport/CamArm")
+Sfx_FootStepsPath = NodePath("Footsteps")
+Sfx_LanterCreakingPath = NodePath("LanterMoving")
 lanter_resource = ExtResource("7_xrmgm")
+Player_State_MachinePath = NodePath("State_Manager")
+AnimationPlayerLightPath = NodePath("Camera3D/AnimationPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000682116, 0.316344, 2.09808e-05)
@@ -331,10 +411,8 @@ gi_mode = 0
 alpha_cut = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_m64rn")
-animation = &"Idle"
+animation = &"stop"
 autoplay = "stop"
-frame = 2
-frame_progress = 0.188729
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Camera3D"]
 anchors_preset = 3
@@ -377,6 +455,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
+libraries = {
+"": SubResource("AnimationLibrary_8pgar")
+}
+
 [node name="Footsteps" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0154903)
 stream = ExtResource("16_uwwvr")
@@ -386,6 +469,33 @@ pitch_scale = 0.57
 [node name="LanterMoving" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0309806)
 stream = ExtResource("17_d7tpr")
-volume_db = -30.0
+volume_db = -9.326
+
+[node name="State_Manager" type="Node" parent="."]
+script = ExtResource("18_vfvvd")
+starting_state = NodePath("Idle")
+actor_node = NodePath("..")
+
+[node name="Idle" type="Node" parent="State_Manager"]
+script = ExtResource("19_e8qia")
+WalkPath = NodePath("../Walk")
+CrouchPath = NodePath("../Crouch")
+JumpPath = NodePath("../Jump")
+
+[node name="Walk" type="Node" parent="State_Manager"]
+script = ExtResource("20_01rp4")
+idlePath = NodePath("../Idle")
+jumpPath = NodePath("../Jump")
+CrouchPath = NodePath("../Crouch")
+
+[node name="Crouch" type="Node" parent="State_Manager"]
+script = ExtResource("21_a4gme")
+idlePath = NodePath("../Idle")
+WalkPath = NodePath("../Walk")
+
+[node name="Jump" type="Node" parent="State_Manager"]
+script = ExtResource("22_c1jhr")
+idlePath = NodePath("../Idle")
+can_place_lanter = false
 
 [connection signal="is_looking_lanter" from="Camera3D/Interaction" to="." method="_pick_up_lanter"]

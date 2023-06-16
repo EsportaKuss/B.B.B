@@ -16,7 +16,7 @@ func _physics_process(_delta):
 		elif detected is BunnyMan:
 			#promtp.text = detected.name
 			if Input.is_action_just_pressed("chat"):
-				State.chatting_start(get_parent().get_parent(),detected)
+				Global.chatting_start(get_parent().get_parent(),detected)
 		elif detected is Door:
 			#print("my name is a door")
 			if Input.is_action_just_pressed("chat"):

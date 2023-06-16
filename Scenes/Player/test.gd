@@ -1,5 +1,5 @@
 class_name Darkness
 extends CharacterBody3D
 
-var state = "un_aware"
+var STATE = "un_aware"
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c2smsdux7u5ux"]
+[gd_scene load_steps=36 format=3 uid="uid://c2smsdux7u5ux"]
 
 [ext_resource type="Script" path="res://Scenes/3d/Wagon.gd" id="1_wivyu"]
 [ext_resource type="Texture2D" uid="uid://d1tq0rnc6s28s" path="res://Assets/wagon/wagon_floor.png" id="1_xr57b"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dsi6y2hmbehe0" path="res://Scenes/3d/door.tscn" id="11_ho272"]
 [ext_resource type="PackedScene" uid="uid://drvbqxqolpviw" path="res://Scenes/3d/ceeling.tscn" id="12_5ubj8"]
 [ext_resource type="PackedScene" uid="uid://bsujk8fah8yqn" path="res://Scenes/3d/OutSideArea.tscn" id="13_plhgg"]
+[ext_resource type="PackedScene" uid="uid://hskc2r07l2xp" path="res://Scenes/3d/Sign.tscn" id="15_k7klo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ti550"]
 transparency = 1
@@ -25,67 +26,6 @@ material = SubResource("StandardMaterial3D_ti550")
 size = Vector2(3, 8)
 subdivide_width = 1
 subdivide_depth = 1
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfenq"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-cull_mode = 2
-disable_ambient_light = true
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_a6lrq")
-normal_scale = -13.15
-rim = 0.0
-rim_tint = 0.17
-clearcoat = 0.0
-clearcoat_roughness = 1.0
-anisotropy = 0.35
-ao_texture_channel = 1
-uv1_triplanar_sharpness = 121.838
-uv1_world_triplanar = true
-texture_filter = 0
-
-[sub_resource type="QuadMesh" id="QuadMesh_1oen3"]
-lightmap_size_hint = Vector2i(42, 7)
-material = SubResource("StandardMaterial3D_pfenq")
-size = Vector2(8, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vsor"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-cull_mode = 2
-albedo_texture = ExtResource("8_5pk74")
-texture_filter = 0
-
-[sub_resource type="QuadMesh" id="QuadMesh_g5h0l"]
-lightmap_size_hint = Vector2i(7, 12)
-material = SubResource("StandardMaterial3D_4vsor")
-size = Vector2(0.5, 1.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30so7"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-cull_mode = 2
-albedo_texture = ExtResource("6_hpi73")
-texture_filter = 0
-
-[sub_resource type="QuadMesh" id="QuadMesh_s3781"]
-material = SubResource("StandardMaterial3D_30so7")
-size = Vector2(0.5, 1.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_866u7"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-cull_mode = 2
-albedo_texture = ExtResource("7_gia8p")
-texture_filter = 0
-
-[sub_resource type="QuadMesh" id="QuadMesh_t4huv"]
-material = SubResource("StandardMaterial3D_866u7")
-size = Vector2(1, 1.51)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ifox"]
 transparency = 2
@@ -114,15 +54,6 @@ texture_filter = 0
 material = SubResource("StandardMaterial3D_q06ef")
 size = Vector2(2, 8)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_n604f"]
-size = Vector3(3.05465, 7.9985, 0.0134989)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_arkel"]
-size = Vector3(0.0270023, 1, 8.01005)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_mftrn"]
-size = Vector3(1, 0.976319, 0.0441054)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4bb2"]
 transparency = 2
 alpha_scissor_threshold = 0.5
@@ -140,6 +71,76 @@ subdivide_width = 2
 [sub_resource type="BoxShape3D" id="BoxShape3D_p15v1"]
 size = Vector3(1.96475, 0.255937, 1.651)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfenq"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+disable_ambient_light = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_a6lrq")
+normal_scale = -13.15
+rim = 0.0
+rim_tint = 0.17
+clearcoat = 0.0
+clearcoat_roughness = 1.0
+anisotropy = 0.35
+ao_texture_channel = 1
+uv1_triplanar_sharpness = 121.838
+uv1_world_triplanar = true
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_1oen3"]
+lightmap_size_hint = Vector2i(42, 7)
+material = SubResource("StandardMaterial3D_pfenq")
+size = Vector2(8, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_arkel"]
+size = Vector3(0.0270023, 1, 8.01005)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vsor"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("8_5pk74")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_g5h0l"]
+lightmap_size_hint = Vector2i(7, 12)
+material = SubResource("StandardMaterial3D_4vsor")
+size = Vector2(0.5, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30so7"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("6_hpi73")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_s3781"]
+material = SubResource("StandardMaterial3D_30so7")
+size = Vector2(0.5, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mftrn"]
+size = Vector3(1, 0.976319, 0.0441054)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_866u7"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("7_gia8p")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_t4huv"]
+material = SubResource("StandardMaterial3D_866u7")
+size = Vector2(1, 1.51)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n604f"]
+size = Vector3(3.05465, 7.9985, 0.0134989)
+
 [node name="Wagon" type="StaticBody3D"]
 script = ExtResource("1_wivyu")
 DoorPath = NodePath("Doors")
@@ -148,54 +149,6 @@ LightsPath = NodePath("Lights")
 [node name="3D_floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0754316, -0.00567207, 0.203044)
 mesh = SubResource("QuadMesh_4amkw")
-
-[node name="3DWall" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.57663, 0.497068, 0.198944)
-mesh = SubResource("QuadMesh_1oen3")
-
-[node name="3DWall2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.41597, 0.497068, 0.198944)
-mesh = SubResource("QuadMesh_1oen3")
-
-[node name="3DWall_diag" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32133, 0.748807, 4.18064)
-mesh = SubResource("QuadMesh_g5h0l")
-
-[node name="3DWall_diag2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.16487, 0.749, 4.18104)
-mesh = SubResource("QuadMesh_g5h0l")
-
-[node name="3DWall_diag3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32063, 0.748807, -3.78968)
-mesh = SubResource("QuadMesh_g5h0l")
-
-[node name="3DWall_diag4" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.16257, 0.748807, -3.78968)
-mesh = SubResource("QuadMesh_g5h0l")
-
-[node name="3D_WallSide" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66987, 0.749, 4.18104)
-mesh = SubResource("QuadMesh_s3781")
-
-[node name="3D_WallSide2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825531, 0.749, 4.18104)
-mesh = SubResource("QuadMesh_s3781")
-
-[node name="3D_WallSide3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.672969, 0.749, -3.78996)
-mesh = SubResource("QuadMesh_s3781")
-
-[node name="3D_WallSide4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825229, 0.749, -3.78996)
-mesh = SubResource("QuadMesh_s3781")
-
-[node name="3D_DoorFrame" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0776308, 0.755, 4.18104)
-mesh = SubResource("QuadMesh_t4huv")
-
-[node name="3D_DoorFrame2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0775297, 0.755, -3.78996)
-mesh = SubResource("QuadMesh_t4huv")
 
 [node name="3D_ramp" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, -0.707107, 0.707107, 0, 0.707107, 0.707107, -1, 3.09086e-08, -3.09086e-08, 1.20157, 1.21501, 0.199044)
@@ -208,82 +161,6 @@ mesh = SubResource("QuadMesh_ho6ke")
 [node name="3D_Roof" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0723302, 1.48959, 0.191144)
 mesh = SubResource("QuadMesh_rogw8")
-
-[node name="3D_Collider_Floor" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0723302, -0.00771502, 0.191144)
-shape = SubResource("BoxShape3D_n604f")
-
-[node name="3D_Collider_Wall" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -1.57853, 0.780559, 0.195143)
-shape = SubResource("BoxShape3D_arkel")
-
-[node name="3D_Collider_Wall2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 1.42977, 0.780559, 0.195143)
-shape = SubResource("BoxShape3D_arkel")
-
-[node name="3D_Collider_Wall_side" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02143, 0.481118, 4.21844)
-shape = SubResource("BoxShape3D_mftrn")
-
-[node name="3D_Collider_Wall_side2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84957, 0.481118, 4.21844)
-shape = SubResource("BoxShape3D_mftrn")
-
-[node name="3D_Collider_Wall_side3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02143, 0.481118, -3.82921)
-shape = SubResource("BoxShape3D_mftrn")
-
-[node name="3D_Collider_Wall_side4" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84957, 0.481118, -3.82921)
-shape = SubResource("BoxShape3D_mftrn")
-
-[node name="Node3D" parent="." instance=ExtResource("10_j8lj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.85873, 0, -3.45929)
-
-[node name="Node3D2" parent="." instance=ExtResource("10_j8lj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.85873, 0, -2.45929)
-
-[node name="Node3D3" parent="." instance=ExtResource("10_j8lj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.85873, 0, -1.44411)
-
-[node name="Node3D4" parent="." instance=ExtResource("10_j8lj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.85873, 0, -0.444106)
-
-[node name="Node3D5" parent="." instance=ExtResource("10_j8lj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.85873, 0, 0.555844)
-
-[node name="Node3D6" parent="." instance=ExtResource("10_j8lj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.85873, 0, 1.55584)
-
-[node name="Node3D7" parent="." instance=ExtResource("10_j8lj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.85873, 0, 2.55584)
-
-[node name="Node3D8" parent="." instance=ExtResource("10_j8lj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.85873, 0, 3.55584)
-
-[node name="Node3D9" parent="." instance=ExtResource("10_j8lj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, -3.45929)
-
-[node name="Node3D10" parent="." instance=ExtResource("10_j8lj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, -2.45929)
-
-[node name="Node3D11" parent="." instance=ExtResource("10_j8lj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, -1.44411)
-
-[node name="Node3D12" parent="." instance=ExtResource("10_j8lj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, -0.444106)
-
-[node name="Node3D13" parent="." instance=ExtResource("10_j8lj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, 0.555844)
-
-[node name="Node3D14" parent="." instance=ExtResource("10_j8lj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, 1.55584)
-
-[node name="Node3D15" parent="." instance=ExtResource("10_j8lj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, 2.55584)
-
-[node name="Node3D16" parent="." instance=ExtResource("10_j8lj5")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, 3.55584)
 
 [node name="AoutSideRoof" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.120257, 0.367391, 0, -0.587825, 0.0751606, -0.0336645, 0.947865, 4.48816)
@@ -303,11 +180,11 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.222
 [node name="Conector2" parent="." instance=ExtResource("10_wpn46")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.202774, 0, 5.13882)
 
-[node name="Node3D17" parent="." instance=ExtResource("13_plhgg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.68952)
+[node name="Inside" parent="." instance=ExtResource("13_plhgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00657129)
 
-[node name="CollisionShape3D" parent="Node3D17" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.778839, -4.52034)
+[node name="CollisionShape3D" parent="Inside" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.778839, 0.191251)
 
 [node name="Doors" type="Node3D" parent="."]
 
@@ -335,7 +212,161 @@ mode = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41244, 3.01699)
 mode = false
 
-[editable path="Node3D17"]
+[node name="WallSide" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56576, 0, 0)
+
+[node name="3DWall" type="MeshInstance3D" parent="WallSide"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.000905156, 0.497068, 0.198944)
+mesh = SubResource("QuadMesh_1oen3")
+skeleton = NodePath("../..")
+
+[node name="3D_Collider_Wall" type="CollisionShape3D" parent="WallSide"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.00280535, 0.780559, 0.195143)
+shape = SubResource("BoxShape3D_arkel")
+
+[node name="WallSide2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41397, 0, 0)
+
+[node name="3DWall" type="MeshInstance3D" parent="WallSide2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.000905156, 0.497068, 0.198944)
+mesh = SubResource("QuadMesh_1oen3")
+skeleton = NodePath("../..")
+
+[node name="3D_Collider_Wall" type="CollisionShape3D" parent="WallSide2"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.00280535, 0.780559, 0.195143)
+shape = SubResource("BoxShape3D_arkel")
+
+[node name="Chairs" type="Node3D" parent="."]
+
+[node name="Node3D" parent="Chairs" instance=ExtResource("10_j8lj5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.85873, 0, -3.45929)
+
+[node name="Node3D2" parent="Chairs" instance=ExtResource("10_j8lj5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.85873, 0, -2.45929)
+
+[node name="Node3D3" parent="Chairs" instance=ExtResource("10_j8lj5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.85873, 0, -1.44411)
+
+[node name="Node3D4" parent="Chairs" instance=ExtResource("10_j8lj5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.85873, 0, -0.444106)
+
+[node name="Node3D5" parent="Chairs" instance=ExtResource("10_j8lj5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.85873, 0, 0.555844)
+
+[node name="Node3D6" parent="Chairs" instance=ExtResource("10_j8lj5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.85873, 0, 1.55584)
+
+[node name="Node3D7" parent="Chairs" instance=ExtResource("10_j8lj5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.85873, 0, 2.55584)
+
+[node name="Node3D8" parent="Chairs" instance=ExtResource("10_j8lj5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.85873, 0, 3.55584)
+
+[node name="Node3D9" parent="Chairs" instance=ExtResource("10_j8lj5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, -3.45929)
+
+[node name="Node3D10" parent="Chairs" instance=ExtResource("10_j8lj5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, -2.45929)
+
+[node name="Node3D11" parent="Chairs" instance=ExtResource("10_j8lj5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, -1.44411)
+
+[node name="Node3D12" parent="Chairs" instance=ExtResource("10_j8lj5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, -0.444106)
+
+[node name="Node3D13" parent="Chairs" instance=ExtResource("10_j8lj5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, 0.555844)
+
+[node name="Node3D14" parent="Chairs" instance=ExtResource("10_j8lj5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, 1.55584)
+
+[node name="Node3D15" parent="Chairs" instance=ExtResource("10_j8lj5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, 2.55584)
+
+[node name="Node3D16" parent="Chairs" instance=ExtResource("10_j8lj5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.14127, 0, 3.55584)
+
+[node name="Front" type="StaticBody3D" parent="."]
+
+[node name="3DWall_diag" type="MeshInstance3D" parent="Front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32133, 0.748807, 4.18064)
+mesh = SubResource("QuadMesh_g5h0l")
+skeleton = NodePath("../..")
+
+[node name="3DWall_diag2" type="MeshInstance3D" parent="Front"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.16487, 0.749, 4.18104)
+mesh = SubResource("QuadMesh_g5h0l")
+skeleton = NodePath("../..")
+
+[node name="3D_WallSide" type="MeshInstance3D" parent="Front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66987, 0.749, 4.18104)
+mesh = SubResource("QuadMesh_s3781")
+skeleton = NodePath("../..")
+
+[node name="3D_WallSide2" type="MeshInstance3D" parent="Front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825531, 0.749, 4.18104)
+mesh = SubResource("QuadMesh_s3781")
+skeleton = NodePath("../..")
+
+[node name="3D_Collider_Wall_side" type="CollisionShape3D" parent="Front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02143, 0.481118, 4.21844)
+shape = SubResource("BoxShape3D_mftrn")
+
+[node name="3D_Collider_Wall_side2" type="CollisionShape3D" parent="Front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84957, 0.481118, 4.21844)
+shape = SubResource("BoxShape3D_mftrn")
+
+[node name="3D_DoorFrame" type="MeshInstance3D" parent="Front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0776308, 0.755, 4.18104)
+mesh = SubResource("QuadMesh_t4huv")
+skeleton = NodePath("../..")
+
+[node name="back" type="StaticBody3D" parent="."]
+
+[node name="3DWall_diag3" type="MeshInstance3D" parent="back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32063, 0.748807, -3.78968)
+mesh = SubResource("QuadMesh_g5h0l")
+skeleton = NodePath("../..")
+
+[node name="3DWall_diag4" type="MeshInstance3D" parent="back"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.16257, 0.748807, -3.78968)
+mesh = SubResource("QuadMesh_g5h0l")
+skeleton = NodePath("../..")
+
+[node name="3D_WallSide3" type="MeshInstance3D" parent="back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.672969, 0.749, -3.78996)
+mesh = SubResource("QuadMesh_s3781")
+skeleton = NodePath("../..")
+
+[node name="3D_WallSide4" type="MeshInstance3D" parent="back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.825229, 0.749, -3.78996)
+mesh = SubResource("QuadMesh_s3781")
+skeleton = NodePath("../..")
+
+[node name="3D_DoorFrame2" type="MeshInstance3D" parent="back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0775297, 0.755, -3.78996)
+mesh = SubResource("QuadMesh_t4huv")
+skeleton = NodePath("../..")
+
+[node name="3D_Collider_Floor" type="CollisionShape3D" parent="back"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0723302, -0.00771502, 0.191144)
+shape = SubResource("BoxShape3D_n604f")
+
+[node name="3D_Collider_Wall_side3" type="CollisionShape3D" parent="back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02143, 0.481118, -3.82921)
+shape = SubResource("BoxShape3D_mftrn")
+
+[node name="3D_Collider_Wall_side4" type="CollisionShape3D" parent="back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84957, 0.481118, -3.82921)
+shape = SubResource("BoxShape3D_mftrn")
+
+[node name="Sign" parent="." instance=ExtResource("15_k7klo")]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, -0.0793005, 0.844879, -3.80117)
+
+[node name="Sign2" parent="." instance=ExtResource("15_k7klo")]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, -0.0793005, 0.844879, 4.2019)
+
+[editable path="Inside"]
 [editable path="Lights/Ceeling"]
 [editable path="Lights/Ceeling/ceeling spotlight"]
 [editable path="Lights/Ceeling2"]

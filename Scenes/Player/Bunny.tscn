@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://mtntm26bggg7"]
 
 [ext_resource type="Texture2D" uid="uid://cr4sy5h7ib2vv" path="res://Assets/Bunny/Bunny.png" id="1_0ssdc"]
-[ext_resource type="Script" path="res://States/estates_BunnyMan.gd" id="1_e3y43"]
+[ext_resource type="Script" path="res://autoLoad/estates_BunnyMan.gd" id="1_e3y43"]
 [ext_resource type="Texture2D" uid="uid://crajib6ox0lf7" path="res://Assets/Bunny/expressions/Bunny_normal.png" id="2_82te8"]
 [ext_resource type="Resource" uid="uid://vloi78mfhskb" path="res://dialogs/Main.dialogue" id="2_mmy7i"]
 [ext_resource type="Texture2D" uid="uid://cajgo58itg5jc" path="res://Assets/Bunny/Bunny_walking.png" id="2_rs8t6"]

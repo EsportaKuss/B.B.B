@@ -63,7 +63,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.224
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.24023, 0, -1.17634)
 
 [node name="Char" parent="." instance=ExtResource("1_rk7or")]
-transform = Transform3D(-0.0600033, 0, -0.998198, 0, 1, 0, 0.998198, 0, -0.0600033, -10.3396, 0.180923, 4.05076)
+transform = Transform3D(-0.0600033, 0, -0.998198, 0, 1, 0, 0.998198, 0, -0.0600033, -10.9603, -0.263175, 4.70927)
 
 [node name="Baboon" parent="." instance=ExtResource("7_jwwon")]
 transform = Transform3D(-0.933, 0, 1.40879e-07, 0, 0.56, 0, -1.40879e-07, 0, -0.933, -10.6856, 0.187946, -6.39279)
@@ -105,7 +105,7 @@ char_path = NodePath("../../../../Char")
 char_path = NodePath("../../../../Char")
 
 [editable path="Train/Wagon"]
-[editable path="Train/Wagon/Node3D17"]
+[editable path="Train/Wagon/Inside"]
 [editable path="Train/Wagon/Lights/Ceeling"]
 [editable path="Train/Wagon/Lights/Ceeling/ceeling spotlight"]
 [editable path="Train/Wagon/Lights/Ceeling2"]
@@ -115,7 +115,7 @@ char_path = NodePath("../../../../Char")
 [editable path="Train/Wagon/Lights/Ceeling4"]
 [editable path="Train/Wagon/Lights/Ceeling4/ceeling spotlight"]
 [editable path="Train/Wagon2"]
-[editable path="Train/Wagon2/Node3D17"]
+[editable path="Train/Wagon2/Inside"]
 [editable path="Train/Wagon2/Lights/Ceeling"]
 [editable path="Train/Wagon2/Lights/Ceeling/ceeling spotlight"]
 [editable path="Train/Wagon2/Lights/Ceeling2"]

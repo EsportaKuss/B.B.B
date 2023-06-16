@@ -14,7 +14,7 @@ var timer = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	change_mode()
-	
+	sfx.volume_db = Global.MASTER_VOLUME - 20
 func change_mode():
 	if mode:
 		sfx.playing = true
