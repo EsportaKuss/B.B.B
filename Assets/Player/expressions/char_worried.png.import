@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdlp3yad0a21d"
-path="res://.godot/imported/char_scared_2.png-e6ddf4137020c70a00e5ba094dd7c0fe.ctex"
+uid="uid://dmqtl1r2gh5g7"
+path="res://.godot/imported/char_worried.png-3aa258f68def40fcd6bcb3353bc18738.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/expressions/char_scared_2.png"
-dest_files=["res://.godot/imported/char_scared_2.png-e6ddf4137020c70a00e5ba094dd7c0fe.ctex"]
+source_file="res://Assets/Player/expressions/char_worried.png"
+dest_files=["res://.godot/imported/char_worried.png-3aa258f68def40fcd6bcb3353bc18738.ctex"]
 
 [params]
 

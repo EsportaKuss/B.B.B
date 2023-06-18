@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbmrm18repsxd"
-path="res://.godot/imported/char_Portrait.png-e0395c1b53b77680b153ddd6ce517f72.ctex"
+uid="uid://cdtvipquukmrj"
+path="res://.godot/imported/Moon.png-d3dea87f166a9733a367244a147c9cb8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/expressions/char_Portrait.png"
-dest_files=["res://.godot/imported/char_Portrait.png-e0395c1b53b77680b153ddd6ce517f72.ctex"]
+source_file="res://Assets/bg/Moon.png"
+dest_files=["res://.godot/imported/Moon.png-d3dea87f166a9733a367244a147c9cb8.ctex"]
 
 [params]
 

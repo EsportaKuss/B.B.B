@@ -10,9 +10,10 @@ extends PlayerState
 @onready var crouch = get_node(CrouchPath)
 
 func enter_state():
-	actor.body_lanter.play("Walking")
-	actor.body_hand.play("Walking")
-	actor.sfx_lanter.play()
+	if actor.holding:
+		actor.body_lanter.play("Walking")
+		actor.body_hand.play("Walking")
+		actor.sfx_lanter.play()
 
 func input(event):
 	

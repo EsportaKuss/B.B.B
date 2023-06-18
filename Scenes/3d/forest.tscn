@@ -13,186 +13,164 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.477, 0, 0)
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 83.6882, 0, -0.236928)
 
 [node name="Tree14" parent="background/Trees7" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 125.967, -1.03822, -0.813034)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -182.712, -1.03822, -0.813023)
 centered = false
 
 [node name="Tree15" parent="background/Trees7" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 192.117, -1.03822, -0.813034)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -116.562, -1.03822, -0.813023)
 centered = false
 
 [node name="Tree16" parent="background/Trees7" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 63.5748, -1.03822, -0.813026)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -245.104, -1.03822, -0.813011)
 centered = false
 
 [node name="Tree17" parent="background/Trees7" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.15646, -1.03822, -0.813027)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -311.835, -1.03822, -0.813011)
 centered = false
 
 [node name="Tree18" parent="background/Trees7" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 259.019, -1.03822, -0.813034)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -49.6599, -1.03822, -0.813019)
 centered = false
 
 [node name="Trees8" type="Node3D" parent="background"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 83.6882, 0, 324.437)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 83.6882, 0, 349.621)
 
 [node name="Tree14" parent="background/Trees8" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 125.967, -1.03822, -0.813034)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -182.712, -1.03822, -0.813023)
 centered = false
 
 [node name="Tree15" parent="background/Trees8" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 192.117, -1.03822, -0.813034)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -116.562, -1.03822, -0.813023)
 centered = false
 
 [node name="Tree16" parent="background/Trees8" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 63.5748, -1.03822, -0.813026)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -245.104, -1.03822, -0.813011)
 centered = false
 
 [node name="Tree17" parent="background/Trees8" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.15646, -1.03822, -0.813027)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -311.835, -1.03822, -0.813011)
 centered = false
 
 [node name="Tree18" parent="background/Trees8" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 259.019, -1.03822, -0.813034)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -49.6599, -1.03822, -0.813019)
 centered = false
 
 [node name="Trees9" type="Node3D" parent="background"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 83.6882, 0, 643.864)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 83.6882, 0, 677.658)
 
 [node name="Tree14" parent="background/Trees9" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 125.967, -1.03822, -0.813034)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -182.712, -1.03822, -0.813023)
 centered = false
 
 [node name="Tree15" parent="background/Trees9" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 192.117, -1.03822, -0.813034)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -116.562, -1.03822, -0.813023)
 centered = false
 
 [node name="Tree16" parent="background/Trees9" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 63.5748, -1.03822, -0.813026)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -245.104, -1.03822, -0.813011)
 centered = false
 
 [node name="Tree17" parent="background/Trees9" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.15646, -1.03822, -0.813027)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -311.835, -1.03822, -0.813011)
 centered = false
 
 [node name="Tree18" parent="background/Trees9" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 259.019, -1.03822, -0.813034)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -49.6599, -1.03822, -0.813019)
 centered = false
 
 [node name="foreground" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0894165)
 
 [node name="Trees" type="Node3D" parent="foreground"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.460621, 0, -0.236928)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.460621, 0, -1.29182)
 
 [node name="Tree14" parent="foreground/Trees" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 26.7536, -1.03822, -0.813028)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -75.9233, -1.03822, -0.813024)
 centered = false
 
 [node name="Tree15" parent="foreground/Trees" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 44.0548, -1.03822, -0.813028)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -58.6221, -1.03822, -0.813024)
 centered = false
 
 [node name="Tree16" parent="foreground/Trees" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 11.1587, -1.03822, -0.813027)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -91.5182, -1.03822, -0.813023)
 centered = false
 
 [node name="Tree17" parent="foreground/Trees" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.15646, -1.03822, -0.813027)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -105.833, -1.03822, -0.813023)
 centered = false
 
 [node name="Tree18" parent="foreground/Trees" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 64.4947, -1.03822, -0.813029)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -38.1822, -1.03822, -0.813025)
 centered = false
 
 [node name="Trees2" type="Node3D" parent="foreground"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.460621, 0, 88.9146)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.460621, 0, 168.174)
 
 [node name="Tree14" parent="foreground/Trees2" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 26.7536, -1.03822, -0.813028)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -75.9233, -1.03822, -0.813024)
 centered = false
 
 [node name="Tree15" parent="foreground/Trees2" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 44.0548, -1.03822, -0.813028)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -58.6221, -1.03822, -0.813024)
 centered = false
 
 [node name="Tree16" parent="foreground/Trees2" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 11.1587, -1.03822, -0.813027)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -91.5182, -1.03822, -0.813023)
 centered = false
 
 [node name="Tree17" parent="foreground/Trees2" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.15646, -1.03822, -0.813027)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -105.833, -1.03822, -0.813023)
 centered = false
 
 [node name="Tree18" parent="foreground/Trees2" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 64.4947, -1.03822, -0.813029)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -38.1822, -1.03822, -0.813025)
 centered = false
 
 [node name="Trees3" type="Node3D" parent="foreground"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.460621, 0, 175.49)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.460621, 0, 366.668)
 
 [node name="Tree14" parent="foreground/Trees3" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 26.7536, -1.03822, -0.813028)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -75.9233, -1.03822, -0.813024)
 centered = false
 
 [node name="Tree15" parent="foreground/Trees3" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 44.0548, -1.03822, -0.813028)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -58.6221, -1.03822, -0.813024)
 centered = false
 
 [node name="Tree16" parent="foreground/Trees3" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 11.1587, -1.03822, -0.813027)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -91.5182, -1.03822, -0.813023)
 centered = false
 
 [node name="Tree17" parent="foreground/Trees3" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.15646, -1.03822, -0.813027)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -105.833, -1.03822, -0.813023)
 centered = false
 
 [node name="Tree18" parent="foreground/Trees3" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 64.4947, -1.03822, -0.813029)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -38.1822, -1.03822, -0.813025)
 centered = false
 
 [node name="Trees4" type="Node3D" parent="foreground"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.460621, 0, 265.275)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.460621, 0, 551.563)
 
 [node name="Tree14" parent="foreground/Trees4" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 26.7536, -1.03822, -0.813028)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -75.9233, -1.03822, -0.813024)
 centered = false
 
 [node name="Tree15" parent="foreground/Trees4" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 44.0548, -1.03822, -0.813028)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -58.6221, -1.03822, -0.813024)
 centered = false
 
 [node name="Tree16" parent="foreground/Trees4" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 11.1587, -1.03822, -0.813027)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -91.5182, -1.03822, -0.813023)
 centered = false
 
 [node name="Tree17" parent="foreground/Trees4" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.15646, -1.03822, -0.813027)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -105.833, -1.03822, -0.813023)
 centered = false
 
 [node name="Tree18" parent="foreground/Trees4" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 64.4947, -1.03822, -0.813029)
-centered = false
-
-[node name="Trees5" type="Node3D" parent="foreground"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.460621, 0, 342.975)
-
-[node name="Tree14" parent="foreground/Trees5" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 26.7536, -1.03822, -0.813028)
-centered = false
-
-[node name="Tree15" parent="foreground/Trees5" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 44.0548, -1.03822, -0.813028)
-centered = false
-
-[node name="Tree16" parent="foreground/Trees5" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 11.1587, -1.03822, -0.813027)
-centered = false
-
-[node name="Tree17" parent="foreground/Trees5" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.15646, -1.03822, -0.813027)
-centered = false
-
-[node name="Tree18" parent="foreground/Trees5" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 64.4947, -1.03822, -0.813029)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -38.1822, -1.03822, -0.813025)
 centered = false
 
 [node name="midground" type="Node3D" parent="."]
@@ -202,67 +180,67 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3388, 0, 0)
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.9901, 0, -0.236928)
 
 [node name="Tree14" parent="midground/Trees4" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 38.4793, -1.03822, -0.813026)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -110.107, -1.03822, -0.81302)
 centered = false
 
 [node name="Tree15" parent="midground/Trees4" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 60.8679, -1.03822, -0.81303)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -87.7181, -1.03822, -0.813024)
 centered = false
 
 [node name="Tree16" parent="midground/Trees4" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 16.2574, -1.03822, -0.813026)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -132.329, -1.03822, -0.81302)
 centered = false
 
 [node name="Tree17" parent="midground/Trees4" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.15646, -1.03822, -0.813027)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -151.742, -1.03822, -0.813021)
 centered = false
 
 [node name="Tree18" parent="midground/Trees4" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 85.6692, -1.03822, -0.81303)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -62.9168, -1.03822, -0.813024)
 centered = false
 
 [node name="Trees5" type="Node3D" parent="midground"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.9901, 0, 108.471)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.9901, 0, 172.222)
 
 [node name="Tree14" parent="midground/Trees5" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 38.4793, -1.03822, -0.813026)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -110.107, -1.03822, -0.81302)
 centered = false
 
 [node name="Tree15" parent="midground/Trees5" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 60.8679, -1.03822, -0.81303)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -87.7181, -1.03822, -0.813024)
 centered = false
 
 [node name="Tree16" parent="midground/Trees5" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 16.2574, -1.03822, -0.813026)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -132.329, -1.03822, -0.81302)
 centered = false
 
 [node name="Tree17" parent="midground/Trees5" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.15646, -1.03822, -0.813027)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -151.742, -1.03822, -0.813021)
 centered = false
 
 [node name="Tree18" parent="midground/Trees5" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 85.6692, -1.03822, -0.81303)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -62.9168, -1.03822, -0.813024)
 centered = false
 
 [node name="Trees6" type="Node3D" parent="midground"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.9901, 0, 215.748)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31.9901, 0, 330.874)
 
 [node name="Tree14" parent="midground/Trees6" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 38.4793, -1.03822, -0.813026)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -110.107, -1.03822, -0.81302)
 centered = false
 
 [node name="Tree15" parent="midground/Trees6" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 60.8679, -1.03822, -0.81303)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -87.7181, -1.03822, -0.813024)
 centered = false
 
 [node name="Tree16" parent="midground/Trees6" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 16.2574, -1.03822, -0.813026)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -132.329, -1.03822, -0.81302)
 centered = false
 
 [node name="Tree17" parent="midground/Trees6" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.15646, -1.03822, -0.813027)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -151.742, -1.03822, -0.813021)
 centered = false
 
 [node name="Tree18" parent="midground/Trees6" instance=ExtResource("2_feitp")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 85.6692, -1.03822, -0.81303)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -62.9168, -1.03822, -0.813024)
 centered = false

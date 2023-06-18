@@ -8,14 +8,11 @@ extends Node3D
 var current_wagon
 func _ready():
 	_screen_resize_controller()
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func _input(event):
 	if Input.is_action_just_pressed("TEST"):
 		wagon_ref_id(1).action_obj("blink",wagon_ref_id(1).Lights,wagon_ref_id(1).all_lights)
-		
-	if Input.is_action_just_pressed("ui_cancel"): 
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE else Input.MOUSE_MODE_VISIBLE
-		
 	if Input.is_action_just_pressed("full_screen"):
 		_screen_resize_controller()
 		

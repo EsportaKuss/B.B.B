@@ -12,15 +12,17 @@ func enter_state():
 		actor.body_lanter.play("stop")
 		actor.body_hand.play("Idle")
 		actor.ani_light_crouch.play("Crouch")
-
+		actor.speed = actor.crouch_speed
 	
 func exit_state():
 	actor.ani_light_crouch.play_backwards("Crouch")
+	actor.speed = actor.walk_speed
 
 func process(delta):
 	move(actor,delta)
 	if Input.is_action_just_released("Crouch"):
 		return idle
+	
 
 func input(event):
 	pass

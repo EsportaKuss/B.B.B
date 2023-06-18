@@ -4,10 +4,12 @@ extends PlayerState
 @export var CrouchPath : NodePath
 @export var JumpPath : NodePath
 
+
 #[Node paths]
 @onready var walk = get_node(WalkPath)
 @onready var crouch = get_node(CrouchPath)
 @onready var jump = get_node(JumpPath)
+
 
 func enter_state():
 	if actor.body_hand:

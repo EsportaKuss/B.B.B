@@ -1,9 +1,10 @@
 ~ start
 do change_portrait("receptor","normal")
+
 if has_meet_BunnyMan == 0
 	BunnyMan: Hi!... Human... Girl?  
 	do change_portrait("receptor","Eh")
-	BunnyMan: weird... 
+	BunnyMan: weird...
 	do change_portrait("receptor","normal")
 	BunnyMan: Anyway... 
 	BunnyMan: Have your ticket?

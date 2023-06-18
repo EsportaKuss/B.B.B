@@ -14,6 +14,10 @@ config/name="Silence"
 run/main_scene="res://Scenes/Maps/Map_1.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 
+[audio]
+
+buses/default_bus_layout="res://Scenes/music/default_bus_layout.tres"
+
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
@@ -51,7 +55,7 @@ editor/timeline_editor_mode=0
 
 [dialogue_manager]
 
-general/states=["State"]
+general/states=["State", "Global"]
 
 [display]
 

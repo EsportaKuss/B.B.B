@@ -9,7 +9,7 @@ enum layer_type {
 @onready var midground = $midground
 @onready var foreground = $foreground
 
-@export var distance = 30
+@export var distance = 120
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,16 +25,16 @@ func _process(delta):
 
 func _limits(ground,child,layer,delta):
 	#print(ground.get_child(child).global_position.z)
-	ground.get_child(child).global_position.z += layer * delta
-	if ground.get_child(child).global_position.z > player.global_position.z + distance:
-		ground.get_child(child).global_position.z = player.global_position.z - distance
+	ground.get_child(child).global_position.z -= layer * delta*5
+	if ground.get_child(child).global_position.z <= player.global_position.z - distance:
+		ground.get_child(child).global_position.z = player.global_position.z + distance
 	
 func _parallax(delta):
 	_limits(foreground,0,layer_type.foreground,delta)
 	_limits(foreground,1,layer_type.foreground,delta)
 	_limits(foreground,2,layer_type.foreground,delta)
 	_limits(foreground,3,layer_type.foreground,delta)
-	_limits(foreground,4,layer_type.foreground,delta)
+	#_limits(foreground,4,layer_type.foreground,delta)
 	
 	_limits(midground,0,layer_type.midground,delta)
 	_limits(midground,1,layer_type.midground,delta)

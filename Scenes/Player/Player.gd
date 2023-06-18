@@ -2,7 +2,9 @@ class_name Player
 extends CharacterBody3D
 
 #[Player vars]
-@export var speed = 1
+var speed = 1
+@export var crouch_speed = 0.5
+@export var walk_speed = 1
 @export var jump_velocity = 2.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var velocity_y = 0
@@ -23,6 +25,7 @@ var looking
 @export var lanter_resource: PackedScene
 @export var Player_State_MachinePath : NodePath
 @export var AnimationPlayerLightPath: NodePath
+@export var looking_Actpath: NodePath
 #[Nodes]
 @onready var body_hand = get_node(Body_HandPath)
 @onready var body_lanter = get_node(Body_LanterPath)
@@ -35,16 +38,20 @@ var looking
 @onready var ani_light_crouch = get_node(AnimationPlayerLightPath)
 
 
-var moving = false
 
+var moving = false
+func _ready():
+	speed = walk_speed
+	
 func _input(event):
 	if event is InputEventMouseMotion and Global.chatting  == false:
 		rotate_y(-event.relative.x * look_sensitivity)
 		camera.rotate_x(-event.relative.y * look_sensitivity)
 		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/2)
-
 func _process(_delta):
 	amrCam.global_transform = camera.global_transform
+
+	
 
 	#_________________________________________________________
 #		[Lanter funcs]
@@ -55,7 +62,9 @@ func _drop_lanter():
 	holding = false
 	var my_lanter = lanter_resource.instantiate()
 	get_tree().current_scene.add_child(my_lanter)
-	my_lanter.position = position
+	my_lanter.global_position = position
+	
+	
 
 func _pick_up_lanter(old_lanter):
 	#updating the var holding to hide the arm and lanter

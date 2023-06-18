@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7b218wabr7fy"]
+
+[ext_resource type="Script" path="res://Scenes/3d/moon.gd" id="1_4qxm5"]
+[ext_resource type="Texture2D" uid="uid://cdtvipquukmrj" path="res://Assets/bg/Moon.png" id="1_qb4d4"]
+
+[node name="Mesh" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0485177, 0)
+script = ExtResource("1_4qxm5")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("1_qb4d4")

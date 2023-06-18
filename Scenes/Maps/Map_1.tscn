@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0allagx6qafc"]
+[gd_scene load_steps=16 format=3 uid="uid://b0allagx6qafc"]
 
 [ext_resource type="Script" path="res://Scenes/Maps/Manager.gd" id="1_qiufp"]
 [ext_resource type="PackedScene" uid="uid://cudausi54eb3o" path="res://Scenes/Player/char.tscn" id="1_rk7or"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://clw1xif0ln570" path="res://models/BG/BG.glb" id="9_ndu6a"]
 [ext_resource type="PackedScene" uid="uid://cunbsr3nmmfsj" path="res://Scenes/Player/test.tscn" id="9_s4sjh"]
 [ext_resource type="PackedScene" uid="uid://c4ra0qb53riyh" path="res://Scenes/3d/forest.tscn" id="10_0n0vt"]
+[ext_resource type="PackedScene" uid="uid://b7b218wabr7fy" path="res://Scenes/3d/moon.tscn" id="12_4mqcs"]
+[ext_resource type="PackedScene" uid="uid://dw40kd8cc7wn8" path="res://Scenes/Maps/main_menu.tscn" id="13_stfd4"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tut21"]
 
@@ -35,6 +37,7 @@ volumetric_fog_enabled = true
 [node name="MyWorld" type="Node3D"]
 script = ExtResource("1_qiufp")
 TrainPath = NodePath("Train")
+full_screem = false
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014626, 0)
@@ -60,16 +63,18 @@ environment = SubResource("Environment_vqxmm")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.22486, 0, 4.13227)
 
 [node name="CharacterBody3D4" parent="." instance=ExtResource("7_n1k7g")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.24023, 0, -1.17634)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.35731, 0, 1.90276)
 
 [node name="Char" parent="." instance=ExtResource("1_rk7or")]
-transform = Transform3D(-0.0600033, 0, -0.998198, 0, 1, 0, 0.998198, 0, -0.0600033, -10.9603, -0.263175, 4.70927)
+transform = Transform3D(-0.0191974, 0, 0.999816, 0, 1, 0, -0.999816, 0, -0.0191974, -11.7581, -0.263175, 4.33892)
+looking_Actpath = NodePath("")
 
 [node name="Baboon" parent="." instance=ExtResource("7_jwwon")]
 transform = Transform3D(-0.933, 0, 1.40879e-07, 0, 0.56, 0, -1.40879e-07, 0, -0.933, -10.6856, 0.187946, -6.39279)
 
 [node name="Test" parent="." instance=ExtResource("9_s4sjh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55162, -0.466092, 15.0409)
+visible = false
 
 [node name="BG" parent="." instance=ExtResource("9_ndu6a")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -175.194, 7.382, 44.682)
@@ -78,10 +83,10 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -175.1
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 168.845, 7.382, 45.652)
 
 [node name="Forest" parent="." instance=ExtResource("10_0n0vt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.895082, 0, -39.003)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.47184, 0, -39.003)
 
 [node name="Forest2" parent="." instance=ExtResource("10_0n0vt")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -22.1755, 0, 4.78332)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -15.2087, 0, 4.78332)
 
 [node name="Train" type="Node3D" parent="."]
 
@@ -104,7 +109,26 @@ char_path = NodePath("../../../../Char")
 [node name="Door2" parent="Train/Wagon2/Doors" index="1"]
 char_path = NodePath("../../../../Char")
 
+[node name="Wagon3" parent="Train" instance=ExtResource("5_aroib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5296, -0.466092, 13.9897)
+id = 2
+
+[node name="Door" parent="Train/Wagon3/Doors" index="0"]
+char_path = NodePath("../../../../Char")
+
+[node name="Door2" parent="Train/Wagon3/Doors" index="1"]
+char_path = NodePath("../../../../Char")
+
+[node name="Moon" parent="." instance=ExtResource("12_4mqcs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.7125, 3.88515, 1.11342)
+charpath = NodePath("../Char")
+
+[node name="MainMenu" parent="." instance=ExtResource("13_stfd4")]
+visible = false
+
 [editable path="Train/Wagon"]
+[editable path="Train/Wagon/Conector"]
+[editable path="Train/Wagon/Conector2"]
 [editable path="Train/Wagon/Inside"]
 [editable path="Train/Wagon/Lights/Ceeling"]
 [editable path="Train/Wagon/Lights/Ceeling/ceeling spotlight"]
@@ -115,6 +139,8 @@ char_path = NodePath("../../../../Char")
 [editable path="Train/Wagon/Lights/Ceeling4"]
 [editable path="Train/Wagon/Lights/Ceeling4/ceeling spotlight"]
 [editable path="Train/Wagon2"]
+[editable path="Train/Wagon2/Conector"]
+[editable path="Train/Wagon2/Conector2"]
 [editable path="Train/Wagon2/Inside"]
 [editable path="Train/Wagon2/Lights/Ceeling"]
 [editable path="Train/Wagon2/Lights/Ceeling/ceeling spotlight"]
@@ -124,3 +150,15 @@ char_path = NodePath("../../../../Char")
 [editable path="Train/Wagon2/Lights/Ceeling3/ceeling spotlight"]
 [editable path="Train/Wagon2/Lights/Ceeling4"]
 [editable path="Train/Wagon2/Lights/Ceeling4/ceeling spotlight"]
+[editable path="Train/Wagon3"]
+[editable path="Train/Wagon3/Conector"]
+[editable path="Train/Wagon3/Conector2"]
+[editable path="Train/Wagon3/Inside"]
+[editable path="Train/Wagon3/Lights/Ceeling"]
+[editable path="Train/Wagon3/Lights/Ceeling/ceeling spotlight"]
+[editable path="Train/Wagon3/Lights/Ceeling2"]
+[editable path="Train/Wagon3/Lights/Ceeling2/ceeling spotlight"]
+[editable path="Train/Wagon3/Lights/Ceeling3"]
+[editable path="Train/Wagon3/Lights/Ceeling3/ceeling spotlight"]
+[editable path="Train/Wagon3/Lights/Ceeling4"]
+[editable path="Train/Wagon3/Lights/Ceeling4/ceeling spotlight"]

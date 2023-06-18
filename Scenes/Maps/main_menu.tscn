@@ -1,0 +1,238 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw40kd8cc7wn8"]
+
+[ext_resource type="Script" path="res://Scenes/Maps/Main_Menu.gd" id="1_m2mnf"]
+
+[node name="MainMenu" type="Control"]
+process_mode = 3
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -10.0
+offset_right = 1.0
+offset_bottom = -10.0
+grow_vertical = 2
+script = ExtResource("1_m2mnf")
+MenuPath = NodePath("Menu")
+OptionPath = NodePath("Options")
+VideoPath = NodePath("Video")
+AudioPath = NodePath("Audio")
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -68.0
+offset_right = 79.0
+offset_bottom = 68.0
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Play"
+
+[node name="Continue" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Continue"
+
+[node name="Options" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Options"
+
+[node name="Exit" type="Button" parent="Menu"]
+layout_mode = 2
+text = "Exit"
+
+[node name="Options" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -33.0
+offset_right = 67.0
+offset_bottom = 33.0
+grow_vertical = 2
+
+[node name="Video" type="Button" parent="Options/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Video"
+
+[node name="Audio" type="Button" parent="Options/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Audio"
+
+[node name="BackFromOptions" type="Button" parent="Options"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = 69.0
+offset_right = 66.0
+offset_bottom = 100.0
+size_flags_vertical = 8
+text = "Back
+"
+
+[node name="Video" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Video"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -43.0
+offset_right = 111.0
+offset_bottom = 43.0
+grow_vertical = 2
+
+[node name="Labels" type="VBoxContainer" parent="Video/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 2
+
+[node name="FullScreen" type="Label" parent="Video/HBoxContainer/Labels"]
+z_as_relative = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "FullScreen
+"
+
+[node name="Borderless" type="Label" parent="Video/HBoxContainer/Labels"]
+z_as_relative = false
+layout_mode = 2
+text = "Borderless"
+
+[node name="VSync" type="Label" parent="Video/HBoxContainer/Labels"]
+z_as_relative = false
+layout_mode = 2
+text = "Vsync"
+
+[node name="Checks" type="VBoxContainer" parent="Video/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 5
+
+[node name="FullScreen" type="CheckBox" parent="Video/HBoxContainer/Checks"]
+layout_mode = 2
+
+[node name="Borderless" type="CheckBox" parent="Video/HBoxContainer/Checks"]
+layout_mode = 2
+
+[node name="VSync" type="CheckBox" parent="Video/HBoxContainer/Checks"]
+layout_mode = 2
+
+[node name="BackFromVideo" type="Button" parent="Video"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = 69.0
+offset_right = 66.0
+offset_bottom = 100.0
+size_flags_vertical = 8
+text = "Back
+"
+
+[node name="Audio" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Audio"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -43.0
+offset_right = 123.0
+offset_bottom = 47.0
+grow_vertical = 2
+
+[node name="Labels" type="VBoxContainer" parent="Audio/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 2
+
+[node name="Master" type="Label" parent="Audio/HBoxContainer/Labels"]
+z_as_relative = false
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Master"
+
+[node name="Music" type="Label" parent="Audio/HBoxContainer/Labels"]
+z_as_relative = false
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Music"
+
+[node name="Sound FX" type="Label" parent="Audio/HBoxContainer/Labels"]
+z_as_relative = false
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Sound Fx"
+
+[node name="Checks" type="VBoxContainer" parent="Audio/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 7.59
+theme_override_constants/separation = 15
+
+[node name="Master" type="HSlider" parent="Audio/HBoxContainer/Checks"]
+layout_mode = 2
+max_value = 15.0
+
+[node name="Music" type="HSlider" parent="Audio/HBoxContainer/Checks"]
+layout_mode = 2
+max_value = 15.0
+
+[node name="Sound FX" type="HSlider" parent="Audio/HBoxContainer/Checks"]
+layout_mode = 2
+max_value = 15.0
+
+[node name="BackFromAudio" type="Button" parent="Audio"]
+layout_mode = 2
+offset_left = -1.0
+offset_top = 69.0
+offset_right = 66.0
+offset_bottom = 100.0
+size_flags_vertical = 8
+text = "Back
+"
+
+[connection signal="pressed" from="Menu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Menu/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Options/VBoxContainer/Video" to="." method="_on_video_pressed"]
+[connection signal="pressed" from="Options/VBoxContainer/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="Options/BackFromOptions" to="." method="_on_back_from_options_pressed"]
+[connection signal="toggled" from="Video/HBoxContainer/Checks/FullScreen" to="." method="_on_full_screen_toggled"]
+[connection signal="toggled" from="Video/HBoxContainer/Checks/Borderless" to="." method="_on_borderless_toggled"]
+[connection signal="toggled" from="Video/HBoxContainer/Checks/VSync" to="." method="_on_v_sync_toggled"]
+[connection signal="pressed" from="Video/BackFromVideo" to="." method="_on_back_from_video_pressed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/Checks/Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/Checks/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/Checks/Sound FX" to="." method="_on_sound_fx_value_changed"]
+[connection signal="pressed" from="Audio/BackFromAudio" to="." method="_on_back_from_audio_pressed"]

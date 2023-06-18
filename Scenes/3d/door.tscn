@@ -181,3 +181,4 @@ shape = SubResource("BoxShape3D_je1b4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105478, 0, -0.0850111)
 stream = ExtResource("4_j2q6j")
 volume_db = -40.0
+bus = &"Sound FX"
