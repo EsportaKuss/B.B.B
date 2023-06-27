@@ -11,10 +11,12 @@ extends PlayerState
 @onready var jump = get_node(JumpPath)
 
 
+
 func enter_state():
-	if actor.body_hand:
-		actor.body_lanter.play("stop")
-		actor.body_hand.play("Idle")
+	if actor.lanter and not actor.interWalking:
+		ani.playback.play((ani.PLAY.R["IDLE"])[ani.P.NAME])
+	elif actor.lanter and actor.interWalking:
+		ani.playback.play((ani.PLAY.R["IDLE"])[ani.P.NAME],-1,1,true)
 	pass
 
 func input(event):
@@ -25,8 +27,8 @@ func input(event):
 	if Input.is_action_just_pressed("Crouch"):
 		return crouch
 	if Input.is_action_just_pressed("click"):
-		if actor.holding:
-			actor._drop_lanter()
+		if actor.lanter and not actor.looking:
+			ani.playback.play((ani.PLAY.R["DROP"])[ani.P.NAME])
 	
 	return null
 	

@@ -1,6 +1,9 @@
 class_name PlayerState
 extends State
 
+var ani
+
+	
 func move(actor,delta):
 	var horizontal_velocity = Input.get_vector("ui_left","ui_right","ui_up","ui_down").normalized() * actor.speed * delta
 	actor.velocity = horizontal_velocity.x * actor.global_transform.basis.x + horizontal_velocity.y * actor.global_transform.basis.z

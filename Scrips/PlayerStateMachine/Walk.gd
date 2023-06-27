@@ -10,11 +10,19 @@ extends PlayerState
 @onready var crouch = get_node(CrouchPath)
 
 func enter_state():
-	if actor.holding:
-		actor.body_lanter.play("Walking")
-		actor.body_hand.play("Walking")
+	if actor.lanter and not actor.looking:
 		actor.sfx_lanter.play()
-
+		ani.playback.play((ani.PLAY.R["WALK"])[ani.P.NAME])
+	elif actor.lanter and actor.looking:
+		actor.sfx_lanter.play()
+		ani.playback.current_animation_position
+		ani.playback.play((ani.PLAY.R["WALK_INTE"])[ani.P.NAME])
+	"""
+	if actor.holding:
+		actor.hand_R.play("Walking")
+		actor.hand_L.play("Walking")
+		actor.sfx_lanter.play()
+	"""
 func input(event):
 	
 	if Input.get_vector("ui_left","ui_right","ui_up","ui_down") == Vector2.ZERO:

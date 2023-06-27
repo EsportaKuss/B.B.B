@@ -7,13 +7,15 @@ extends PlayerState
 @onready var idle = get_node(idlePath)
 @onready var walk = get_node(WalkPath)
 
+
 func enter_state():
-	if actor.body_hand:
+	"""
+	if actor.hand_R:
 		actor.body_lanter.play("stop")
 		actor.body_hand.play("Idle")
-		actor.ani_light_crouch.play("Crouch")
-		actor.speed = actor.crouch_speed
-	
+	"""
+	actor.ani_light_crouch.play("Crouch")
+	actor.speed = actor.crouch_speed
 func exit_state():
 	actor.ani_light_crouch.play_backwards("Crouch")
 	actor.speed = actor.walk_speed

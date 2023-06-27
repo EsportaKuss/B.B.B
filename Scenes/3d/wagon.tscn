@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c2smsdux7u5ux"]
+[gd_scene load_steps=38 format=3 uid="uid://c2smsdux7u5ux"]
 
 [ext_resource type="Script" path="res://Scenes/3d/Wagon.gd" id="1_wivyu"]
 [ext_resource type="Texture2D" uid="uid://d1tq0rnc6s28s" path="res://Assets/wagon/wagon_floor.png" id="1_xr57b"]
@@ -16,6 +16,25 @@
 [ext_resource type="PackedScene" uid="uid://bsujk8fah8yqn" path="res://Scenes/3d/OutSideArea.tscn" id="13_plhgg"]
 [ext_resource type="PackedScene" uid="uid://hskc2r07l2xp" path="res://Scenes/3d/Sign.tscn" id="15_k7klo"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ifox"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("3_dg8ar")
+heightmap_texture = ExtResource("9_r452v")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_sxu8s"]
+material = SubResource("StandardMaterial3D_3ifox")
+size = Vector2(8, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0c0cv"]
+size = Vector3(7.99265, 1, 0.0442589)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1pvyo"]
+size = Vector3(7.96875, 1, 0.0441959)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ti550"]
 transparency = 1
 albedo_texture = ExtResource("1_xr57b")
@@ -26,19 +45,6 @@ material = SubResource("StandardMaterial3D_ti550")
 size = Vector2(3, 8)
 subdivide_width = 1
 subdivide_depth = 1
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ifox"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-cull_mode = 2
-albedo_texture = ExtResource("3_dg8ar")
-heightmap_texture = ExtResource("9_r452v")
-texture_filter = 0
-
-[sub_resource type="QuadMesh" id="QuadMesh_ho6ke"]
-material = SubResource("StandardMaterial3D_3ifox")
-size = Vector2(8, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q06ef"]
 transparency = 2
@@ -139,24 +145,40 @@ material = SubResource("StandardMaterial3D_866u7")
 size = Vector2(1, 1.51)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n604f"]
-size = Vector3(3.05465, 7.9985, 0.0134989)
+size = Vector3(3.05465, 9.23071, 0.0134989)
 
 [node name="Wagon" type="StaticBody3D"]
 script = ExtResource("1_wivyu")
+Mode = "turn_on"
 DoorPath = NodePath("Doors")
 LightsPath = NodePath("Lights")
+SignPath = NodePath("Signs")
+
+[node name="ramp" type="StaticBody3D" parent="."]
+
+[node name="3D_ramp" type="MeshInstance3D" parent="ramp"]
+transform = Transform3D(-4.37114e-08, -0.707107, 0.707107, 0, 0.707107, 0.707107, -1, 3.09086e-08, -3.09086e-08, 1.20157, 1.21501, 0.199044)
+mesh = SubResource("QuadMesh_sxu8s")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ramp"]
+transform = Transform3D(-4.37114e-08, -0.707107, 0.707107, 0, 0.707107, 0.707107, -1, 3.09086e-08, -3.09086e-08, 1.20157, 1.21501, 0.199044)
+shape = SubResource("BoxShape3D_0c0cv")
+
+[node name="ramp2" type="StaticBody3D" parent="."]
+
+[node name="3D_ramp2" type="MeshInstance3D" parent="ramp2"]
+transform = Transform3D(-4.37114e-08, 0.707107, 0.707107, 0, 0.707107, -0.707107, -1, -3.09086e-08, -3.09086e-08, -1.34883, 1.21501, 0.199044)
+mesh = SubResource("QuadMesh_sxu8s")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ramp2"]
+transform = Transform3D(-4.37114e-08, 0.707107, 0.707107, 0, 0.707107, -0.707107, -1, -3.09086e-08, -3.09086e-08, -1.34883, 1.21501, 0.199044)
+shape = SubResource("BoxShape3D_1pvyo")
 
 [node name="3D_floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0754316, -0.00567207, 0.203044)
 mesh = SubResource("QuadMesh_4amkw")
-
-[node name="3D_ramp" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, -0.707107, 0.707107, 0, 0.707107, 0.707107, -1, 3.09086e-08, -3.09086e-08, 1.20157, 1.21501, 0.199044)
-mesh = SubResource("QuadMesh_ho6ke")
-
-[node name="3D_ramp2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0.707107, 0.707107, 0, 0.707107, -0.707107, -1, -3.09086e-08, -3.09086e-08, -1.34883, 1.21501, 0.199044)
-mesh = SubResource("QuadMesh_ho6ke")
 
 [node name="3D_Roof" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0723302, 1.48959, 0.191144)
@@ -372,11 +394,13 @@ shape = SubResource("BoxShape3D_mftrn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84957, 0.481118, -3.82921)
 shape = SubResource("BoxShape3D_mftrn")
 
-[node name="Sign" parent="." instance=ExtResource("15_k7klo")]
-transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, -0.0793005, 0.844879, -3.80117)
+[node name="Signs" type="Node3D" parent="."]
 
-[node name="Sign2" parent="." instance=ExtResource("15_k7klo")]
-transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, -0.0793005, 0.844879, 4.2019)
+[node name="Sign2" parent="Signs" instance=ExtResource("15_k7klo")]
+transform = Transform3D(-0.2, 1.74846e-08, 7.64274e-16, 0, -8.74228e-09, 0.2, 1.74846e-08, 0.2, 8.74228e-09, -0.0793005, 0.844879, 4.2019)
+
+[node name="Sign" parent="Signs" instance=ExtResource("15_k7klo")]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, -0.0793005, 0.844879, -3.80117)
 
 [editable path="Conector"]
 [editable path="Conector2"]

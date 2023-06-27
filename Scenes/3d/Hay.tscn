@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsi2rx70miv7c"]
+
+[ext_resource type="PackedScene" uid="uid://dojaitultgrm0" path="res://models/wagon/hay.glb" id="1_sn00l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qwgju"]
+size = Vector3(3.01592, 0.669331, 1)
+
+[node name="Node3D" type="StaticBody3D"]
+
+[node name="hay" parent="." instance=ExtResource("1_sn00l")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.333746, 0)
+shape = SubResource("BoxShape3D_qwgju")

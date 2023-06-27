@@ -3,20 +3,25 @@ extends CharacterBody3D
 
 #[Player vars]
 var speed = 1
+@export_category("Player Stats")
 @export var crouch_speed = 0.5
 @export var walk_speed = 1
 @export var jump_velocity = 2.5
+@export var lanter: bool
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var velocity_y = 0
-var holding = true
 var looking
+var target_lanter
+@export_category("Player Emotions")
 @export var myEmotions = {}
+@export_category("Mouse sensibility")
 @export_range(0,0.005,0.0001) var look_sensitivity = 0.002
-
+var interWalking
 
 #[NodesPaths]
-@export var Body_HandPath: NodePath
-@export var Body_LanterPath: NodePath
+@export_category("Nodes Paths")
+@export var Arm_RPath: NodePath
+@export var Arm_LPath: NodePath
 @export var CameraPath: NodePath
 @export var LightPath: NodePath
 @export var ArmCamPath: NodePath
@@ -26,9 +31,12 @@ var looking
 @export var Player_State_MachinePath : NodePath
 @export var AnimationPlayerLightPath: NodePath
 @export var looking_Actpath: NodePath
+@export var ArmAnimationsPath: NodePath
+
 #[Nodes]
-@onready var body_hand = get_node(Body_HandPath)
-@onready var body_lanter = get_node(Body_LanterPath)
+@onready var playback = get_node(ArmAnimationsPath)
+@onready var arm_r = get_node(Arm_RPath)
+@onready var arm_l = get_node(Arm_RPath)
 @onready var camera = get_node(CameraPath)
 @onready var light = get_node(LightPath)
 @onready var amrCam = get_node(ArmCamPath)
@@ -39,9 +47,20 @@ var looking
 
 
 
+
+
 var moving = false
 func _ready():
+	"""
+	#ARM_ANIMATION_TREE.active = true
+	if lanter: 
+		toggle_lanter(true)
+	else:
+		toggle_lanter(false)
+	"""
 	speed = walk_speed
+	
+	
 	
 func _input(event):
 	if event is InputEventMouseMotion and Global.chatting  == false:
@@ -56,24 +75,23 @@ func _process(_delta):
 	#_________________________________________________________
 #		[Lanter funcs]
 func _drop_lanter():
-	body_hand.visible = false
-	body_lanter.visible = false
-	light.visible = false
-	holding = false
-	var my_lanter = lanter_resource.instantiate()
-	get_tree().current_scene.add_child(my_lanter)
-	my_lanter.global_position = position
-	
-	
-
-func _pick_up_lanter(old_lanter):
-	#updating the var holding to hide the arm and lanter
-	body_hand.visible = true
-	body_lanter.visible = true
-	light.visible = true
-	holding = true
-	#destroy lanter
-	#print(old_lanter.name)
-	old_lanter.queue_free()
+	if lanter :
+		var my_lanter = lanter_resource.instantiate()
+		get_tree().current_scene.add_child(my_lanter)
+		my_lanter.global_position = position - Vector3(0,0.15,0)
+		lanter = !lanter
+func _pick_up_lanter():
+	if not lanter:
+		target_lanter.queue_free()
+		lanter = !lanter
 #________________________________________________________
 	
+#_________________________________________________________
+#	[Hand interaction]
+
+#this func only play a the interaction animation based on the lanter
+
+#_________________________________________________________
+	
+
+

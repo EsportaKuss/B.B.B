@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkvrj0jsvala2"]
+
+[ext_resource type="PackedScene" path="res://models/wagon/tiny bench.glb" id="1_bxndi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3bb7m"]
+size = Vector3(1, 0.427916, 1)
+
+[node name="Node3D" type="StaticBody3D"]
+
+[node name="tiny bench" parent="." instance=ExtResource("1_bxndi")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.216784, 0)
+shape = SubResource("BoxShape3D_3bb7m")

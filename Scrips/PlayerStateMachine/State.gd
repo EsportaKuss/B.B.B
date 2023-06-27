@@ -5,6 +5,7 @@ extends Node
 @export var can_place_lanter : bool = true
 var actor
 
+
 #get into a new state
 func input(event):
 	return null

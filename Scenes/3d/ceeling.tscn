@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://drvbqxqolpviw"]
+[gd_scene load_steps=6 format=3 uid="uid://drvbqxqolpviw"]
 
 [ext_resource type="Script" path="res://Ceeling.gd" id="1_cm74q"]
 [ext_resource type="PackedScene" uid="uid://ysev5omfkxk8" path="res://models/wagon/ceeling spotlight.glb" id="2_w1l84"]
@@ -41,20 +41,14 @@ _data = {
 "blink": SubResource("Animation_hnw1b")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aduhf"]
-shading_mode = 0
-albedo_color = Color(5, 5, 5, 1)
-texture_filter = 0
-
 [node name="Ceeling" type="StaticBody3D"]
 script = ExtResource("1_cm74q")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00580406, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0187497, 0)
 layers = 3
 light_energy = 0.888889
 light_size = 0.01
-light_cull_mask = 4294967263
 shadow_enabled = true
 shadow_opacity = 0.6
 shadow_blur = 2.0
@@ -70,6 +64,6 @@ libraries = {
 [node name="ceeling spotlight" parent="." instance=ExtResource("2_w1l84")]
 
 [node name="cuboid" parent="ceeling spotlight/Node2" index="0"]
-material_overlay = SubResource("StandardMaterial3D_aduhf")
+layers = 33
 
 [editable path="ceeling spotlight"]

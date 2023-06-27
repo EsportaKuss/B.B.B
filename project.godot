@@ -165,6 +165,7 @@ Crouch={
 
 [internationalization]
 
+locale/translations=PackedStringArray("res://dialogs/Main.en.translation")
 locale/translations_pot_files=PackedStringArray("res://dialogs/Main.dialogue")
 
 [layer_names]

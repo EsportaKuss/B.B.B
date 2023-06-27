@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://didvtvxkb0261"]
+
+[ext_resource type="PackedScene" uid="uid://qe448flc2fsg" path="res://models/wagon/pot.glb" id="1_fupwl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qjdb4"]
+size = Vector3(0.37078, 0.717282, 0.363118)
+
+[node name="Node3D" type="StaticBody3D"]
+
+[node name="pot" parent="." instance=ExtResource("1_fupwl")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.370333, 0)
+shape = SubResource("BoxShape3D_qjdb4")

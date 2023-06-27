@@ -2,33 +2,33 @@
 do change_portrait("receptor","normal")
 
 if has_meet_BunnyMan == 0
-	BunnyMan: Hi!... Human... Girl?  
+	BunnyMan: Hi!... Human... Girl?   
 	do change_portrait("receptor","Eh")
-	BunnyMan: weird...
+	BunnyMan: weird... 
 	do change_portrait("receptor","normal")
 	BunnyMan: Anyway... 
-	BunnyMan: Have your ticket?
+	BunnyMan: Have your ticket? 
 	do change_portrait("emisor","normal")
 	set has_meet_BunnyMan += 1
-	- Yes... 
+	- Yes...  
 		do change_portrait("receptor","oh")
-		BunnyMan: Liyer
-	- No...
+		BunnyMan: Liyer 
+	- No... 
 		do change_portrait("receptor","oh")
-		BunnyMan: I see
+		BunnyMan: I see 
 		do change_portrait("receptor","Eh")
 elif has_meet_BunnyMan > 3:
 	do change_portrait("receptor","oh")
-	BunnyMan: You better stop...
+	BunnyMan: You better stop... 
 	set has_meet_BunnyMan += 1
 elif has_meet_BunnyMan > 5:
-	BunnyMan: You're breaking my patience...
+	BunnyMan: You're breaking my patience... 
 else:
 	do change_portrait("receptor","Eh")
-	BunnyMan: Have your ticket already? 
+	BunnyMan: Have your ticket already?  
 	set has_meet_BunnyMan += 1
 	do change_portrait("emisor","rock")
-	- no
-	- I know you? => start
+	- no 
+	- I know you?  => start
 set chatting = false 
 => END

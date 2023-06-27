@@ -12,3 +12,6 @@ billboard = 1
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("1_qb4d4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.014349)

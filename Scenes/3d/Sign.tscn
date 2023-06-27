@@ -12,8 +12,14 @@ cull_mode = 2
 albedo_texture = ExtResource("1_s1bva")
 texture_filter = 0
 
-[node name="Node3D" type="Node3D"]
+[node name="Sign" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_bkl0c")
 surface_material_override/0 = SubResource("StandardMaterial3D_scbqg")
+
+[node name="number" type="Label3D" parent="."]
+transform = Transform3D(-2, -1.74846e-07, -7.64274e-15, 0, -8.74228e-08, 2, -1.74846e-07, 2, 8.74228e-08, 0, 0.00467424, -0.0659373)
+shaded = true
+modulate = Color(0.54902, 0.54902, 0.54902, 1)
+text = "001"

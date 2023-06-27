@@ -1,18 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw40kd8cc7wn8"]
+[gd_scene load_steps=3 format=3 uid="uid://dw40kd8cc7wn8"]
 
 [ext_resource type="Script" path="res://Scenes/Maps/Main_Menu.gd" id="1_m2mnf"]
+[ext_resource type="FontFile" uid="uid://xr420r5w2hj8" path="res://Font/ChakraPetch-Regular.ttf" id="2_kugsp"]
 
-[node name="MainMenu" type="Control"]
+[node name="Menu" type="Control"]
 process_mode = 3
-texture_filter = 1
 layout_mode = 3
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 1.0
-offset_top = -10.0
-offset_right = 1.0
-offset_bottom = -10.0
 grow_vertical = 2
 script = ExtResource("1_m2mnf")
 MenuPath = NodePath("Menu")
@@ -32,19 +28,35 @@ grow_vertical = 2
 
 [node name="Play" type="Button" parent="Menu"]
 layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 text = "Play"
+flat = true
 
 [node name="Continue" type="Button" parent="Menu"]
 layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 text = "Continue"
+flat = true
 
 [node name="Options" type="Button" parent="Menu"]
 layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 text = "Options"
+flat = true
 
 [node name="Exit" type="Button" parent="Menu"]
 layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 text = "Exit"
+flat = true
 
 [node name="Options" type="Control" parent="."]
 visible = false
@@ -67,29 +79,38 @@ grow_vertical = 2
 
 [node name="Video" type="Button" parent="Options/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 text = "Video"
+flat = true
 
 [node name="Audio" type="Button" parent="Options/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 text = "Audio"
+flat = true
 
-[node name="BackFromOptions" type="Button" parent="Options"]
+[node name="BackFromOptions" type="Button" parent="Options/VBoxContainer"]
 layout_mode = 2
-offset_left = -1.0
-offset_top = 69.0
-offset_right = 66.0
-offset_bottom = 100.0
+size_flags_horizontal = 0
 size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 text = "Back
 "
+flat = true
 
 [node name="Video" type="Control" parent="."]
 visible = false
 layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Video"]
@@ -110,18 +131,26 @@ theme_override_constants/separation = 2
 [node name="FullScreen" type="Label" parent="Video/HBoxContainer/Labels"]
 z_as_relative = false
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 text = "FullScreen
 "
 
 [node name="Borderless" type="Label" parent="Video/HBoxContainer/Labels"]
 z_as_relative = false
 layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 text = "Borderless"
 
 [node name="VSync" type="Label" parent="Video/HBoxContainer/Labels"]
 z_as_relative = false
 layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 text = "Vsync"
 
 [node name="Checks" type="VBoxContainer" parent="Video/HBoxContainer"]
@@ -132,22 +161,32 @@ theme_override_constants/separation = 5
 
 [node name="FullScreen" type="CheckBox" parent="Video/HBoxContainer/Checks"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 
 [node name="Borderless" type="CheckBox" parent="Video/HBoxContainer/Checks"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 
 [node name="VSync" type="CheckBox" parent="Video/HBoxContainer/Checks"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 
 [node name="BackFromVideo" type="Button" parent="Video"]
 layout_mode = 2
-offset_left = -1.0
-offset_top = 69.0
-offset_right = 66.0
-offset_bottom = 100.0
+offset_top = 54.0
+offset_right = 45.0
+offset_bottom = 83.0
+grow_vertical = 2
+size_flags_horizontal = 0
 size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 text = "Back
 "
+flat = true
 
 [node name="Audio" type="Control" parent="."]
 visible = false
@@ -179,18 +218,24 @@ theme_override_constants/separation = 2
 z_as_relative = false
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 text = "Master"
 
 [node name="Music" type="Label" parent="Audio/HBoxContainer/Labels"]
 z_as_relative = false
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 text = "Music"
 
 [node name="Sound FX" type="Label" parent="Audio/HBoxContainer/Labels"]
 z_as_relative = false
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 text = "Sound Fx"
 
 [node name="Checks" type="VBoxContainer" parent="Audio/HBoxContainer"]
@@ -202,32 +247,39 @@ theme_override_constants/separation = 15
 
 [node name="Master" type="HSlider" parent="Audio/HBoxContainer/Checks"]
 layout_mode = 2
+min_value = -20.0
 max_value = 15.0
 
 [node name="Music" type="HSlider" parent="Audio/HBoxContainer/Checks"]
 layout_mode = 2
+min_value = -20.0
 max_value = 15.0
 
 [node name="Sound FX" type="HSlider" parent="Audio/HBoxContainer/Checks"]
 layout_mode = 2
+min_value = -20.0
 max_value = 15.0
 
 [node name="BackFromAudio" type="Button" parent="Audio"]
 layout_mode = 2
-offset_left = -1.0
-offset_top = 69.0
-offset_right = 66.0
-offset_bottom = 100.0
+offset_top = 54.0
+offset_right = 45.0
+offset_bottom = 83.0
+grow_vertical = 2
 size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_kugsp")
+theme_override_font_sizes/font_size = 16
 text = "Back
 "
+flat = true
 
 [connection signal="pressed" from="Menu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Menu/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Menu/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Options/VBoxContainer/Video" to="." method="_on_video_pressed"]
 [connection signal="pressed" from="Options/VBoxContainer/Audio" to="." method="_on_audio_pressed"]
-[connection signal="pressed" from="Options/BackFromOptions" to="." method="_on_back_from_options_pressed"]
+[connection signal="pressed" from="Options/VBoxContainer/BackFromOptions" to="." method="_on_back_from_options_pressed"]
 [connection signal="toggled" from="Video/HBoxContainer/Checks/FullScreen" to="." method="_on_full_screen_toggled"]
 [connection signal="toggled" from="Video/HBoxContainer/Checks/Borderless" to="." method="_on_borderless_toggled"]
 [connection signal="toggled" from="Video/HBoxContainer/Checks/VSync" to="." method="_on_v_sync_toggled"]

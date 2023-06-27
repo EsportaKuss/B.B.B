@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://chtdtolndmf2j"]
+
+[ext_resource type="PackedScene" uid="uid://dhf1v1sdotiy3" path="res://models/wagon/WoodBox.glb" id="1_fspum"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ichwr"]
+size = Vector3(1, 0.832981, 1)
+
+[node name="Node3D" type="StaticBody3D"]
+
+[node name="WoodBox" parent="." instance=ExtResource("1_fspum")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.432626, 0)
+shape = SubResource("BoxShape3D_ichwr")

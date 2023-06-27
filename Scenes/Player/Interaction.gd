@@ -1,5 +1,12 @@
 extends RayCast3D
+@export var playerPath : NodePath
+
 @onready var promtp  = $promtp
+@onready var player = get_node(playerPath)
+@export var AniPath : NodePath
+
+@onready var ani = get_node(AniPath)
+
 var point
 signal is_looking_lanter(old_lanter)
 func _ready():
@@ -11,17 +18,49 @@ func _physics_process(_delta):
 		point = get_collision_point ()
 	if is_colliding():
 		var detected = get_collider()
+		
 		if  detected is Lanter:
 			promtp.text = detected.name
+			player.looking = true
+			if player.looking:
+				ani.action()
+			
 			if Input.is_action_just_pressed("click"):
-				emit_signal("is_looking_lanter",detected)
+				player.looking = false
+				ani.playback.stop()
+				player.target_lanter = detected
+				print("click")
+				ani.playback.play((ani.PLAY.R["PICK"])[ani.P.NAME])
+			
+				
+				
+
 		elif detected is BunnyMan:
 			#promtp.text = detected.name
-			if Input.is_action_just_pressed("chat"):
+			player.looking = true
+			if Input.is_action_just_pressed("click"):
 				Global.chatting_start(get_parent().get_parent(),detected)
+
+
 		elif detected is Door:
-			#print("my name is a door")
-			if Input.is_action_just_pressed("chat"):
-				detected.mode = not detected.mode
-				detected.change_mode()
+			player.looking = true
+			ani.action()
+			if Input.is_action_just_pressed("click"):
+				if not detected.locked:
+					detected.mode = not detected.mode
+					detected.change_mode()
+					
+	elif player.looking:
+		if player.lanter:
+			var _ani = (ani.PLAY.L["B_INTE"])
+			ani.playback.play(_ani[ani.P.NAME],_ani[ani.P.BLE],_ani[ani.P.SP],_ani[ani.P.BACK])
+			player.looking = false
+			ani.last_take = "in"
+		else:
+			var _ani = (ani.PLAY.R["B_INTE"])
+			ani.playback.play(_ani[ani.P.NAME],_ani[ani.P.BLE],_ani[ani.P.SP],_ani[ani.P.BACK])
+			player.looking = false
+			ani.last_take = "in"
+	
 	pass
+	

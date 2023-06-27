@@ -3,6 +3,7 @@ extends StaticBody3D
 @export var mode = false
 @export var  time_opened = 2
 @export var max_distance_to = 1.5
+@export var locked: bool
 @onready var door = $MeshInstance3D
 @onready var Collision = $CollisionShape3D
 @onready var sfx = $sfx

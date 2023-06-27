@@ -3,18 +3,24 @@ extends Node3D
 @export var TrainPath: NodePath
 @onready var Wagons = get_node(TrainPath).get_children()
 @export var full_screem = true
+@export var MenuPath : NodePath
 
+@onready var menu = get_node(MenuPath) 
 
 var current_wagon
 func _ready():
+	#menu.Menu_mode("main")
 	_screen_resize_controller()
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
+	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE else Input.MOUSE_MODE_VISIBLE
+	#menu.visible = true
 func _input(event):
 	if Input.is_action_just_pressed("TEST"):
-		wagon_ref_id(1).action_obj("blink",wagon_ref_id(1).Lights,wagon_ref_id(1).all_lights)
+		wagon_ref_id(1).action_obj("turn_off",wagon_ref_id(1).Lights,wagon_ref_id(1).all_lights)
 	if Input.is_action_just_pressed("full_screen"):
 		_screen_resize_controller()
+		
+	
 		
 	if Input.is_key_pressed(KEY_DELETE):
 		get_tree().quit()

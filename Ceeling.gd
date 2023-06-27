@@ -1,9 +1,10 @@
 extends StaticBody3D
-@export var mode = true
+@export var mode: bool = true
 @onready var light = $OmniLight3D
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	change_mode()
+	#change_mode()
+	pass
 
 func change_mode():
 	if mode:

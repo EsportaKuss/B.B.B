@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://caldtrvb0ibrs"]
+
+[ext_resource type="Texture2D" uid="uid://cu270ix2m5xkl" path="res://models/wagon/pig.png" id="1_nnutq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_314qp"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+depth_draw_mode = 1
+albedo_texture = ExtResource("1_nnutq")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_w50jc"]
+material = SubResource("StandardMaterial3D_314qp")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b4nrk"]
+size = Vector3(1, 1, 0.001)
+
+[node name="Node3D" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_w50jc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_b4nrk")
