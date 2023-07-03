@@ -1,12 +1,121 @@
-[gd_scene load_steps=13 format=3 uid="uid://cxokug8sfir8k"]
+[gd_scene load_steps=17 format=3 uid="uid://cxokug8sfir8k"]
 
 [ext_resource type="Texture2D" uid="uid://y4n3u0jidpot" path="res://Assets/Baboon/thing.png" id="1_je0e8"]
 [ext_resource type="Texture2D" uid="uid://bjkwx56wgj7ho" path="res://Assets/Baboon/Eyes_L.png" id="2_kiydg"]
 [ext_resource type="Texture2D" uid="uid://dq0js0a422aje" path="res://Assets/Baboon/Eyes_R.png" id="3_r8v84"]
 [ext_resource type="Texture2D" uid="uid://b1xkr76f21521" path="res://Assets/Baboon/back.png" id="4_jlwka"]
+[ext_resource type="PackedScene" uid="uid://dr8oo2fa6mu4p" path="res://Scenes/tools/entity_trigger.tscn" id="5_qgtom"]
+[ext_resource type="PackedScene" uid="uid://bdipfq2hnossp" path="res://Scenes/Maps/TriggerGameOver.tscn" id="6_edr7h"]
+[ext_resource type="AudioStream" uid="uid://bd16atelvm16x" path="res://music/EndGame.wav" id="7_x3gbr"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_we6ld"]
-size = Vector3(4.14468, 2.46224, 2.63953)
+[sub_resource type="Animation" id="Animation_yknbx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/AudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(-34.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1ilco"]
+resource_name = "show"
+length = 50.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8, 7.9, 21.4, 35.6, 49),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1.27456),
+"update": 0,
+"values": [Vector3(0, -20, 0), Vector3(0, -0.077, -10), Vector3(0, -0.077, -15), Vector3(0, -0.077, -100), Vector3(0, -0.077, -150), Vector3(0, -0.077, -300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body/AudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(-37.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c4dpl"]
+_data = {
+"RESET": SubResource("Animation_yknbx"),
+"show": SubResource("Animation_1ilco")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w7fho"]
 atlas = ExtResource("1_je0e8")
@@ -23,10 +132,6 @@ region = Rect2(768, 0, 384, 320)
 [sub_resource type="AtlasTexture" id="AtlasTexture_hk7e6"]
 atlas = ExtResource("1_je0e8")
 region = Rect2(1152, 0, 384, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_34bj5"]
-atlas = ExtResource("1_je0e8")
-region = Rect2(1536, 0, 384, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hjv2c"]
 atlas = ExtResource("1_je0e8")
@@ -48,9 +153,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_hk7e6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_34bj5")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_hjv2c")
 }],
 "loop": true,
@@ -60,47 +162,71 @@ animations = [{
 
 [node name="Baboon" type="CharacterBody3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.827888)
-shape = SubResource("BoxShape3D_we6ld")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c4dpl")
+}
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+[node name="Body" type="Node3D" parent="."]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Body"]
 transform = Transform3D(1.2, 0, 0, 0, 0.9, 0, 0, 0, 1.2, 0, 0, 0)
 alpha_cut = 1
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_pbxbl")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.322641
+frame_progress = 0.657573
 
-[node name="Eye_L" type="Sprite3D" parent="."]
+[node name="Eye_L" type="Sprite3D" parent="Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.140697, -0.0757883, 0.175125)
 billboard = 1
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("2_kiydg")
 
-[node name="Eye_R" type="Sprite3D" parent="."]
+[node name="Eye_R" type="Sprite3D" parent="Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.301129, 0, 0.138274)
 billboard = 1
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("3_r8v84")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.09839)
+[node name="Sprite3D" type="Sprite3D" parent="Body"]
+transform = Transform3D(42.15, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 1.09839)
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("4_jlwka")
 
-[node name="Sprite3D2" type="Sprite3D" parent="."]
+[node name="Sprite3D2" type="Sprite3D" parent="Body"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.22922, 0, 2.07289)
+visible = false
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("4_jlwka")
 
-[node name="Sprite3D3" type="Sprite3D" parent="."]
+[node name="Sprite3D3" type="Sprite3D" parent="Body"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.799104, 0, 2.07289)
+visible = false
 alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("4_jlwka")
+
+[node name="TriggerGameOver" parent="Body" instance=ExtResource("6_edr7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.077, 17.3058)
+
+[node name="CollisionShape3D" parent="Body/TriggerGameOver" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.67443)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -33.1884)
+stream = ExtResource("7_x3gbr")
+volume_db = 1.0
+unit_size = 100.0
+max_distance = 466.63
+bus = &"Sound FX"
+
+[node name="EntityTrigger" parent="." instance=ExtResource("5_qgtom")]
+mode = "show"
+
+[editable path="Body/TriggerGameOver"]

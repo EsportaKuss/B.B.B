@@ -13,11 +13,12 @@ extends PlayerState
 
 
 func enter_state():
-	if actor.lanter and not actor.interWalking:
-		ani.playback.play((ani.PLAY.R["IDLE"])[ani.P.NAME])
-	elif actor.lanter and actor.interWalking:
-		ani.playback.play((ani.PLAY.R["IDLE"])[ani.P.NAME],-1,1,true)
-	pass
+	if actor.lanter:
+		#ani.playback.play((ani.PLAY.R["IDLE"])[ani.P.NAME])
+		ani.play_action(ani.playback,ani.PLAY.R,"IDLE")
+	else:
+		#ani.playback.play((ani.PLAY.N["EMPY"])[ani.P.NAME])
+		ani.play_action(ani.playbackL,ani.PLAY.L,"EMPY")
 
 func input(event):
 	if Input.get_vector("ui_left","ui_right","ui_up","ui_down"):

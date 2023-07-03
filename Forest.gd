@@ -14,7 +14,6 @@ enum layer_type {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	pass # Replace with function body.
 
 
@@ -44,3 +43,5 @@ func _parallax(delta):
 	_limits(background,1,layer_type.background,delta)
 	_limits(background,2,layer_type.background,delta)
 	
+
+			

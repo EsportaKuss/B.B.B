@@ -204,16 +204,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.778839, 0.191251)
 [node name="Doors" type="Node3D" parent="."]
 
 [node name="Door" parent="Doors" instance=ExtResource("8_kfdw2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0216073, 0.322, -3.70081)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0788703, 0.5019, -3.78848)
 
 [node name="Door2" parent="Doors" instance=ExtResource("8_kfdw2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100915, 0.310731, 4.26274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0752672, 0.504931, 4.17518)
 
 [node name="Door3" parent="Doors" instance=ExtResource("8_kfdw2")]
-transform = Transform3D(-8.74228e-08, 0, 0.5, 0, 1, 0, -2, 0, -2.18557e-08, -1.5307, 0.330495, 0)
+transform = Transform3D(-8.74228e-08, 0, 0.5, 0, 1, 0, -2, 0, -2.18557e-08, -1.5679, 0.501337, 0.16705)
+locked = true
 
 [node name="Door4" parent="Doors" instance=ExtResource("8_kfdw2")]
-transform = Transform3D(-8.74228e-08, 0, 0.5, 0, 1, 0, -2, 0, -2.18557e-08, 1.45747, 0.330495, 0)
+transform = Transform3D(-8.74228e-08, 0, 0.5, 0, 1, 0, -2, 0, -2.18557e-08, 1.41681, 0.498032, 0.20872)
+locked = true
 
 [node name="Lights" type="Node3D" parent="."]
 
@@ -461,9 +463,17 @@ transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 
 [node name="Sign2" parent="Signs" instance=ExtResource("15_cvy6t")]
 transform = Transform3D(-0.2, 1.74846e-08, 7.64274e-16, 0, -8.74228e-09, 0.2, 1.74846e-08, 0.2, 8.74228e-09, -0.0793005, 0.844879, 4.2019)
 
+[node name="SubLighst" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SubLighst"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.557473, 4.93637)
+light_color = Color(0, 0, 0.372549, 1)
+omni_range = 0.909698
+
 [editable path="Conector"]
 [editable path="Conector2"]
 [editable path="Inside"]
+[editable path="Doors/Door3"]
 [editable path="Lights/Ceeling"]
 [editable path="Lights/Ceeling/ceeling spotlight"]
 [editable path="Lights/Ceeling2"]

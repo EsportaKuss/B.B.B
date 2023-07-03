@@ -1,12 +1,13 @@
 extends Node
 @export var ActorPath: NodePath
 @export var PlaybackPath: NodePath
+@export var PlaybackLPath: NodePath
 
+@onready var playbackL = get_node(PlaybackLPath)
 @onready var playback = get_node(PlaybackPath)
 @onready var actor = get_node(ActorPath)
-var last_take = "in"
 
-var current_act
+var take = false
 
 enum P
 {
@@ -27,41 +28,45 @@ var PLAY = {
 		"WALK" : ["walk", -1,1,false],
 		"WALK_INTE" : ["walk_inte",-1,1,false],
 		"DROP" : ["lanter_drop", -1,1,false],
-		"PICK" : ["lanter_pick", -11,1,false]
+		"PICK" : ["lanter_pick", -1,1,false]
 		},
 	L = {
-		"IDLE" : ["idle_plus_l",-1,1,false],
-		"INTE" : ["interact_l",-1,1,false],
-		"B_INTE" : ["interact_l",-1,-1,true]
+		"EMPY" : ["empy",-1,1,false],
+		"IDLE" :["idle",-1,1,false],
+		"INTE" : ["interact",-1,1,false],
+		"B_INTE" : ["interact",-1,-1,true]
 	}
 }
 func toggle():
 	if actor.lanter:
-		playback.play((PLAY.R["IDLE"])[P.NAME])
-	
-		
+		#playback.play((PLAY.R["IDLE"])[P.NAME])
+		play_action(playback,PLAY.R,"IDLE")
 	else:
-		playback.play((PLAY.N["EMPY"])[P.NAME])
+		play_action(playbackL,PLAY.L,"EMPY")
+		#playback.play((PLAY.N["EMPY"])[P.NAME])
 	
 	pass
 
 func action():
-	if last_take == "in":
-		if actor.lanter:
-			playback.play((PLAY.L["INTE"])[P.NAME])
-			last_take = "out"
+	if actor.lanter:
+		if playbackL.current_animation != "interact":
+			play_action(playbackL,PLAY.L,"INTE",take)
+			take = !take
 		else:
-			if not playback.current_animation == (PLAY.R["INTE"])[P.NAME]:
-				playback.play((PLAY.R["INTE"])[P.NAME])
-				last_take = "out"
-		
-	
+			return
+			
+	else:
+		if playback.current_animation != "interact":
+			play_action(playback,PLAY.R,"INTE",take)
+			take = !take
+		else:
+			return
 	#Crear algun dia una variable o un gestor de animaciones... algun dia
-		
 	pass
 
 func _ready():
-	print(actor.lanter)
+	
+	
 	toggle()
 	pass 
 
@@ -71,3 +76,13 @@ func back_action():
 func _process(delta):
 	#print(playback.current_animation)
 	pass
+	
+func play_action (hand,hand_order,animation,rev=false,atribute = P.NAME,priority = false):
+	var anima = ((hand_order[animation])[atribute])
+	if rev:
+		hand.play((hand_order[animation])[atribute],-1,-1,true)
+		return
+	if priority:
+		hand.queue(anima)
+	hand.play(anima)
+	

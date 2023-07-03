@@ -20,47 +20,44 @@ func _physics_process(_delta):
 		var detected = get_collider()
 		
 		if  detected is Lanter:
-			promtp.text = detected.name
+			#promtp.text = detected.name
 			player.looking = true
 			if player.looking:
 				ani.action()
-			
 			if Input.is_action_just_pressed("click"):
 				player.looking = false
-				ani.playback.stop()
 				player.target_lanter = detected
-				print("click")
-				ani.playback.play((ani.PLAY.R["PICK"])[ani.P.NAME])
+				ani.play_action(ani.playback,ani.PLAY.R,"PICK")
 			
-				
-				
-
-		elif detected is BunnyMan:
-			#promtp.text = detected.name
-			player.looking = true
-			if Input.is_action_just_pressed("click"):
-				Global.chatting_start(get_parent().get_parent(),detected)
 
 
 		elif detected is Door:
 			player.looking = true
 			ani.action()
 			if Input.is_action_just_pressed("click"):
-				if not detected.locked:
-					detected.mode = not detected.mode
-					detected.change_mode()
+				detected.mode = not detected.mode
+				detected.change_mode(detected.mode)
 					
 	elif player.looking:
 		if player.lanter:
+			ani.play_action(ani.playbackL,ani.PLAY.L,"INTE",true)
+		else:
+			ani.play_action(ani.playback,ani.PLAY.R,"INTE",true)
+		player.looking = false
+	"""				
+	elif player.looking:
+		if player.lanter:
 			var _ani = (ani.PLAY.L["B_INTE"])
-			ani.playback.play(_ani[ani.P.NAME],_ani[ani.P.BLE],_ani[ani.P.SP],_ani[ani.P.BACK])
+			ani.playbackL.play(_ani[ani.P.NAME],_ani[ani.P.BLE],_ani[ani.P.SP],_ani[ani.P.BACK])
 			player.looking = false
-			ani.last_take = "in"
+			
 		else:
 			var _ani = (ani.PLAY.R["B_INTE"])
 			ani.playback.play(_ani[ani.P.NAME],_ani[ani.P.BLE],_ani[ani.P.SP],_ani[ani.P.BACK])
 			player.looking = false
-			ani.last_take = "in"
+	"""
 	
 	pass
 	
+func ready():
+	pass

@@ -1,0 +1,155 @@
+[gd_scene load_steps=13 format=3 uid="uid://b21igcdic47kb"]
+
+[ext_resource type="Texture2D" uid="uid://vkdepsbs0cco" path="res://Assets/Noise/hand.png" id="1_ty50k"]
+[ext_resource type="PackedScene" uid="uid://dr8oo2fa6mu4p" path="res://Scenes/tools/entity_trigger.tscn" id="2_xa6gv"]
+
+[sub_resource type="Animation" id="Animation_srw34"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_yxbgj"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.105589, 0), Vector3(0, 1.24676, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_nv844"]
+resource_name = "idle"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.105589, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hand:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7sh3i"]
+_data = {
+"RESET": SubResource("Animation_srw34"),
+"hide": SubResource("Animation_yxbgj"),
+"idle": SubResource("Animation_nv844")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdn26"]
+atlas = ExtResource("1_ty50k")
+region = Rect2(0, 0, 277, 194)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsjem"]
+atlas = ExtResource("1_ty50k")
+region = Rect2(277, 0, 277, 194)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnxh4"]
+atlas = ExtResource("1_ty50k")
+region = Rect2(554, 0, 277, 194)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsqyl"]
+atlas = ExtResource("1_ty50k")
+region = Rect2(831, 0, 277, 194)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orydl"]
+atlas = ExtResource("1_ty50k")
+region = Rect2(1108, 0, 277, 194)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rtw5h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdn26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsjem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnxh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsqyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orydl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Node3D" type="StaticBody3D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_7sh3i")
+}
+
+[node name="hand" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="AnimatedSprite3D" parent="hand"]
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_rtw5h")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="EntityTrigger" parent="." instance=ExtResource("2_xa6gv")]

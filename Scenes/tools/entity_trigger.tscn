@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr8oo2fa6mu4p"]
+
+[ext_resource type="Script" path="res://Scenes/Player/TriggerHand.gd" id="1_jrbug"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_whtia"]
+size = Vector3(2.11922, 2.13131, 0.137125)
+
+[node name="EntityTrigger" type="Area3D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_jrbug")
+playbackPath = NodePath("../AnimationPlayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8897, 0)
+shape = SubResource("BoxShape3D_whtia")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

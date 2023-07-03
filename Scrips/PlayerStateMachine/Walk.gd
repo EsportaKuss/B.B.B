@@ -10,13 +10,10 @@ extends PlayerState
 @onready var crouch = get_node(CrouchPath)
 
 func enter_state():
-	if actor.lanter and not actor.looking:
+	if actor.lanter:
 		actor.sfx_lanter.play()
-		ani.playback.play((ani.PLAY.R["WALK"])[ani.P.NAME])
-	elif actor.lanter and actor.looking:
-		actor.sfx_lanter.play()
-		ani.playback.current_animation_position
-		ani.playback.play((ani.PLAY.R["WALK_INTE"])[ani.P.NAME])
+		#ani.playback.play((ani.PLAY.R["WALK"])[ani.P.NAME])
+		ani.play_action(ani.playback,ani.PLAY.R,"WALK",true)
 	"""
 	if actor.holding:
 		actor.hand_R.play("Walking")

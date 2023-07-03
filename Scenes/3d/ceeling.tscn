@@ -53,7 +53,7 @@ shadow_enabled = true
 shadow_opacity = 0.6
 shadow_blur = 2.0
 distance_fade_enabled = true
-omni_range = 2.45097
+omni_range = 1.77881
 omni_attenuation = 0.574348
 
 [node name="LightsBlinks" type="AnimationPlayer" parent="OmniLight3D"]

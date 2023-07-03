@@ -16,12 +16,14 @@ extends Control
 @onready var audio = get_node(AudioPath)
 @onready var menubg = get_node(MenuBGPath)
 
+
 func _ready():
 	actor.visible = false
 	Menu_mode(mode)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	visible = true
 	menubg.current = true
+	menu.get_node("Continue").hide()
 	pass
 func _input(event):
 	if Input.is_action_just_pressed("ui_cancel") and mode == "pause":
@@ -44,10 +46,12 @@ func Menu_mode(mode):
 	match mode:
 		"pause": 
 			menu.get_node("Play").hide()
+			menu.get_node("Continue").show()
 			
 			#bg.visible = false
 		"main":  
 			menu.get_node("Play").show()
+			menu.get_node("Continue").hide()
 			
 			#bg.visible = true
 	pass

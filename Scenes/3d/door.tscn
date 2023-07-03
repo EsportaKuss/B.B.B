@@ -1,186 +1,187 @@
-[gd_scene load_steps=27 format=3 uid="uid://dsi6y2hmbehe0"]
+[gd_scene load_steps=11 format=3 uid="uid://dsi6y2hmbehe0"]
 
-[ext_resource type="Texture2D" uid="uid://bamhq4bk5msiv" path="res://Assets/wagon/Door_closed.png" id="1_3cec0"]
 [ext_resource type="Script" path="res://Scenes/3d/door.gd" id="1_6if6i"]
-[ext_resource type="Texture2D" uid="uid://d2xdf1ofp8rge" path="res://Assets/wagon/SlowDoor.png" id="3_d13eq"]
+[ext_resource type="AudioStream" uid="uid://nettbgsavxta" path="res://music/LoockedDoor.mp3" id="4_5extv"]
 [ext_resource type="AudioStream" uid="uid://ya43sscmbj8t" path="res://music/open_close_door.mp3" id="4_j2q6j"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gupc5"]
-atlas = ExtResource("1_3cec0")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_34r6i"]
-atlas = ExtResource("1_3cec0")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4p5ws"]
-atlas = ExtResource("1_3cec0")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w2r0h"]
-atlas = ExtResource("1_3cec0")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_08lat"]
-atlas = ExtResource("1_3cec0")
-region = Rect2(512, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_byk3f"]
-atlas = ExtResource("1_3cec0")
-region = Rect2(640, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r50es"]
-atlas = ExtResource("1_3cec0")
-region = Rect2(768, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m4hry"]
-atlas = ExtResource("1_3cec0")
-region = Rect2(896, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ff8m"]
-atlas = ExtResource("3_d13eq")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qui1x"]
-atlas = ExtResource("3_d13eq")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7htg3"]
-atlas = ExtResource("3_d13eq")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x4ad2"]
-atlas = ExtResource("3_d13eq")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8k0af"]
-atlas = ExtResource("3_d13eq")
-region = Rect2(512, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jfc0i"]
-atlas = ExtResource("3_d13eq")
-region = Rect2(640, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kjr3t"]
-atlas = ExtResource("3_d13eq")
-region = Rect2(768, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_017nw"]
-atlas = ExtResource("3_d13eq")
-region = Rect2(896, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l42lx"]
-atlas = ExtResource("3_d13eq")
-region = Rect2(1024, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ygcwn"]
-atlas = ExtResource("3_d13eq")
-region = Rect2(1152, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t2bn4"]
-atlas = ExtResource("3_d13eq")
-region = Rect2(1280, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8rgcv"]
-atlas = ExtResource("3_d13eq")
-region = Rect2(1408, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_04c08"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gupc5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_34r6i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4p5ws")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w2r0h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_08lat")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_byk3f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r50es")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m4hry")
-}],
-"loop": false,
-"name": &"Closed",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3ff8m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qui1x")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7htg3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x4ad2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8k0af")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jfc0i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kjr3t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_017nw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l42lx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ygcwn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t2bn4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8rgcv")
-}],
-"loop": false,
-"name": &"Open",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://b5gdxr483gcuv" path="res://Assets/wagon/Door-sheet.png" id="5_l83eg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_je1b4"]
-size = Vector3(1, 1, 0.168803)
+size = Vector3(0.899558, 1.57682, 0.0489764)
+
+[sub_resource type="Animation" id="Animation_ngqsq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_l83eg")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("right:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.310634, 0.0707667, 0.00185181)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("left:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.319888, 0.0707667, 0.00185181)]
+}
+
+[sub_resource type="Animation" id="Animation_6a4sx"]
+resource_name = "action"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_l83eg")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("right:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.310634, 0.0707667, 0.00185181), Vector3(-0.622574, 0.0707667, 0.00185181)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("left:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.319888, 0.0707667, 0.00185181), Vector3(0.617911, 0.0707667, 0.00185181)]
+}
+
+[sub_resource type="Animation" id="Animation_rp1nj"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_dddcy"]
+resource_name = "lock"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_safur"]
+_data = {
+"RESET": SubResource("Animation_ngqsq"),
+"action": SubResource("Animation_6a4sx"),
+"idle": SubResource("Animation_rp1nj"),
+"lock": SubResource("Animation_dddcy")
+}
 
 [node name="Door" type="StaticBody3D"]
 script = ExtResource("1_6if6i")
+max_distance_to = 5.0
 
-[node name="MeshInstance3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.100878, 0.0707667, -0.0812833)
-gi_mode = 2
-shaded = true
-alpha_cut = 1
-texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_04c08")
-animation = &"Open"
+[node name="right" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.310634, 0.0707667, 0.00185181)
+shape = SubResource("BoxShape3D_je1b4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.100878, 0.0707667, -0.0812833)
+[node name="left" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.319888, 0.0707667, 0.00185181)
 shape = SubResource("BoxShape3D_je1b4")
 
 [node name="sfx" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105478, 0, -0.0850111)
 stream = ExtResource("4_j2q6j")
 volume_db = -40.0
+max_distance = 1.0
 bus = &"Sound FX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_safur")
+}
+
+[node name="Sprite" type="Sprite3D" parent="."]
+transform = Transform3D(0.78, 0, 0, 0, 0.8, 0, 0, 0, 0.995, 0, 0, 0)
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("5_l83eg")
+hframes = 10
+
+[node name="sfx2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_5extv")
+volume_db = -40.0
+max_distance = 1.0
+bus = &"Sound FX"

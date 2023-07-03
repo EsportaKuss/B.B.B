@@ -13,6 +13,8 @@ config_version=5
 config/name="Silence"
 run/main_scene="res://Scenes/Maps/Map_1.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
+config/icon="res://ICON2.png"
+config/windows_native_icon="res://Icon.ico"
 
 [audio]
 
@@ -20,7 +22,6 @@ buses/default_bus_layout="res://Scenes/music/default_bus_layout.tres"
 
 [autoload]
 
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Global="*res://autoLoad/Global.gd"
 BgMusic="*res://Scenes/music/BG_music.tscn"
 
@@ -68,10 +69,6 @@ window/stretch/mode="viewport"
 [editor]
 
 movie_writer/movie_file="C:/Users/alejandro/Desktop/Stranger Silence/records/Test.avi"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [importer_defaults]
 

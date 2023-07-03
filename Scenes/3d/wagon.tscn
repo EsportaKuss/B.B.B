@@ -149,7 +149,6 @@ size = Vector3(3.05465, 9.23071, 0.0134989)
 
 [node name="Wagon" type="StaticBody3D"]
 script = ExtResource("1_wivyu")
-Mode = "turn_on"
 DoorPath = NodePath("Doors")
 LightsPath = NodePath("Lights")
 SignPath = NodePath("Signs")
@@ -223,10 +222,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.778839, 0.191251)
 [node name="Doors" type="Node3D" parent="."]
 
 [node name="Door" parent="Doors" instance=ExtResource("11_ho272")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0216073, 0.322, -3.70081)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076683, 0.502, -3.788)
 
 [node name="Door2" parent="Doors" instance=ExtResource("11_ho272")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100915, 0.310731, 4.26274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0773913, 0.50284, 4.18071)
 
 [node name="Lights" type="Node3D" parent="."]
 
@@ -401,6 +400,13 @@ transform = Transform3D(-0.2, 1.74846e-08, 7.64274e-16, 0, -8.74228e-09, 0.2, 1.
 
 [node name="Sign" parent="Signs" instance=ExtResource("15_k7klo")]
 transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, -0.0793005, 0.844879, -3.80117)
+
+[node name="SubLighst" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SubLighst"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.557473, 4.93637)
+light_color = Color(0, 0, 0.372549, 1)
+omni_range = 0.909698
 
 [editable path="Conector"]
 [editable path="Conector2"]

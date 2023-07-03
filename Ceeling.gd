@@ -6,8 +6,8 @@ func _ready():
 	#change_mode()
 	pass
 
-func change_mode():
-	if mode:
+func change_mode(_mode):
+	if _mode:
 		light.light_energy = 1
 	else:
 		light.light_energy = 0

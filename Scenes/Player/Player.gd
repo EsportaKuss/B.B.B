@@ -16,7 +16,7 @@ var target_lanter
 @export var myEmotions = {}
 @export_category("Mouse sensibility")
 @export_range(0,0.005,0.0001) var look_sensitivity = 0.002
-var interWalking
+
 
 #[NodesPaths]
 @export_category("Nodes Paths")
@@ -51,13 +51,6 @@ var interWalking
 
 var moving = false
 func _ready():
-	"""
-	#ARM_ANIMATION_TREE.active = true
-	if lanter: 
-		toggle_lanter(true)
-	else:
-		toggle_lanter(false)
-	"""
 	speed = walk_speed
 	
 	
@@ -93,5 +86,8 @@ func _pick_up_lanter():
 
 #_________________________________________________________
 	
-
+func sanity(_mind):
+	light.light_color(255,255,_mind)
+	
+	
 
