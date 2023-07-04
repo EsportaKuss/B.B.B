@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dal3aakit6kdf"]
+[gd_scene load_steps=2 format=3 uid="uid://chewy4xgbuplb"]
 
-[ext_resource type="Script" path="res://Scenes/tools/actionable.gd" id="1_i3aq1"]
+[sub_resource type="GDScript" id="GDScript_q3r0a"]
+script/source = "extends Area3D
+
+"
 
 [node name="Actionable" type="Area3D"]
 collision_layer = 16
-script = ExtResource("1_i3aq1")
+script = SubResource("GDScript_q3r0a")

@@ -1,13 +1,8 @@
-[gd_scene load_steps=53 format=3 uid="uid://cudausi54eb3o"]
+[gd_scene load_steps=48 format=3 uid="uid://cudausi54eb3o"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_1xga0"]
 [ext_resource type="Texture2D" uid="uid://db6udos8j1pjy" path="res://Assets/Player/cha_idler.png" id="1_vuq1u"]
-[ext_resource type="Texture2D" uid="uid://cbmrm18repsxd" path="res://Assets/Player/expressions/char_Portrait.png" id="2_5fov5"]
 [ext_resource type="Texture2D" uid="uid://b3qo5vgc1jdp3" path="res://Assets/Player/char_walking.png" id="2_g2g1q"]
-[ext_resource type="Texture2D" uid="uid://dqkkvhfviqwel" path="res://Assets/Player/expressions/char_rock.png" id="3_t0r60"]
-[ext_resource type="Texture2D" uid="uid://dfhqyfsfbx12p" path="res://Assets/Player/expressions/char_sad.png" id="4_dfofl"]
-[ext_resource type="Texture2D" uid="uid://s2ludrvo2no8" path="res://Assets/Player/expressions/char_scared.png" id="5_iicpu"]
-[ext_resource type="Texture2D" uid="uid://dmqtl1r2gh5g7" path="res://Assets/Player/expressions/char_worried.png" id="6_r6l2n"]
 [ext_resource type="PackedScene" uid="uid://bmv67s4nlkqme" path="res://Scenes/3d/lanter.tscn" id="7_xrmgm"]
 [ext_resource type="Script" path="res://Scenes/Player/Arm_Manager.gd" id="10_sutff"]
 [ext_resource type="Script" path="res://Scenes/Player/Interaction.gd" id="14_ujdk3"]
@@ -672,13 +667,6 @@ collision_mask = 5
 script = ExtResource("1_1xga0")
 crouch_speed = 15.0
 walk_speed = 30
-myEmotions = {
-"normal": ExtResource("2_5fov5"),
-"rock": ExtResource("3_t0r60"),
-"sacred": ExtResource("5_iicpu"),
-"sad": ExtResource("4_dfofl"),
-"worried": ExtResource("6_r6l2n")
-}
 look_sensitivity = 0.0034
 Arm_RPath = NodePath("Camera3D/Arms/amr_R")
 Arm_LPath = NodePath("Camera3D/Arms/amr_L")

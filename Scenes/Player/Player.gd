@@ -12,8 +12,6 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var velocity_y = 0
 var looking
 var target_lanter
-@export_category("Player Emotions")
-@export var myEmotions = {}
 @export_category("Mouse sensibility")
 @export_range(0,0.005,0.0001) var look_sensitivity = 0.002
 

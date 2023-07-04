@@ -108,6 +108,7 @@ lights_mode = ["turn_on", "turn_on", "turn_off", "turn_on"]
 char_path = NodePath("../../../../Char")
 
 [node name="Door2" parent="Train/Wagon2/Doors" index="1"]
+locks = 2
 char_path = NodePath("../../../../Char")
 
 [node name="Wagon3" parent="Train" instance=ExtResource("5_aroib")]
@@ -119,7 +120,7 @@ char_path = NodePath("../../../../Char")
 
 [node name="Door2" parent="Train/Wagon3/Doors" index="1"]
 locked = true
-locks = 7
+locks = 4
 char_path = NodePath("../../../../Char")
 
 [node name="Wagon4" parent="Train" instance=ExtResource("12_lrf8r")]
